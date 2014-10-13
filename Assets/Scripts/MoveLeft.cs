@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Jump : MonoBehaviour
+public class MoveLeft : MonoBehaviour
 {
-    public float jumpForce;
-    private GameObject hero;
-
+    public Vector3 moveSpeed = new Vector3();
+    private bool moving = false;
+    private GameObject[] scene;
+    private GameObject bg;
+    
     // Use this for initialization
     void Start()
     {
-        hero = GameObject.Find("Player");
+        scene = GameObject.FindGameObjectsWithTag("Moveable");
+        bg = GameObject.Find("Platforms");
     }
     
     // Update is called once per frame
@@ -41,18 +44,34 @@ public class Jump : MonoBehaviour
                 CheckTouch(Input.mousePosition, "ended");
             }
         }
+        
+        // Move if button is pressed
+        if (moving && bg.transform.position.x < 4.82f)
+        {
+            for (int i = 0; i < scene.Length; i++)
+            {
+                if (scene [i] != null)
+                {
+                    scene [i].transform.position += moveSpeed;
+                }
+            }
+        }
     }
-
+    
     void CheckTouch(Vector3 pos, string phase)
     {
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D hit = Physics2D.OverlapPoint(touchPos);
         
-        if (hit.gameObject.name == "button_jump" && hit && phase == "began")
+        if (hit.gameObject.name == "LeftButton" && hit && phase == "began")
         {
-            hero.rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-            audio.Play();
+            moving = true;
         }
-    }
+        
+        if (hit.gameObject.name == "LeftButton" && hit && phase == "ended")
+        {
+            moving = false;
+        }
+    } 
 }

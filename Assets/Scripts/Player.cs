@@ -1,4 +1,11 @@
-﻿using UnityEngine;
+﻿/** 
+ * This is a Player script that is for demoing that uses keyboard inputs
+ * and applies animations.
+ * 
+
+ **/
+
+using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
@@ -8,28 +15,45 @@ public class Player : MonoBehaviour {
 //	public float onGround;
 	public float jumpForce = 1000f;
 
-//	public LayerMask whatIsGround;
+	//Animation Control
+	private Animator anim;
+	private bool facingRight;
+
+
+
+	//takes in button input as well
+	//private GameObject rightButton;
+	//private GameObject leftButton;
+	private GameObject spewButton;
+	private GameObject jumpButton;
+
+
 
 	// Use this for initialization
 	void Start () {
-	
+		//leftButton = GameObject.Find ("button_left");
+		//rightButton = GameObject.Find("button_right");
+		jumpButton = GameObject.Find ("button_jump");
+		spewButton = GameObject.Find ("button_spew");
+
+		facingRight = true;
+		anim = GetComponent<Animator> ();
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.name == "destructible" ||
-		   collision.gameObject.name == "unmeltable")
+		if(collision.gameObject.name == "Platforms")
 		{
 			grounded = true;
+			System.Console.WriteLine("grounded");
 		}
 	}
-
 	void OnCollisionExit2D(Collision2D collision)
 	{
-		if (collision.gameObject.name == "tile1" ||
-						collision.gameObject.name == "tile2") 
+		if (collision.gameObject.name == "Platforms") 
 		{
 			grounded = false;
+			System.Console.WriteLine("not grounded");
 		}
 	}
 
@@ -37,30 +61,41 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float inputX = Input.GetAxis("Horizontal");
-//		float inputY = Input.GetAxis("Vertical");
-
-		/**Movement of player character: horizontal controlled, vertical = jumping**/
-/*		if (grounded) 
-		{
-			onGround = speed.y * inputY;
-		}
-		else 
-		{			
-			onGround = rigidbody2D.velocity.y;
-		}
-*/
 		movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = movement;
 
+		if (inputX != 0) {
+			anim.SetBool("moving",true);
+		}else{
+			anim.SetBool ("moving",false);
+			}
+
+		if(grounded && Input.GetKeyDown(KeyCode.W)){
+			rigidbody2D.AddForce (new Vector2(0,jumpForce));
+			jumpButton.audio.Play();
+		}
+
+		//Animation controller
+		if (inputX > 0 && !facingRight) 
+		{
+				Flip();
+		} else if (inputX < 0 && facingRight){
+				Flip();
+		}
+
+	}
+
+	//Reverses xscale
+	void Flip(){
+		facingRight = !facingRight;
+		Vector3 thisScale = transform.localScale;
+		thisScale.x = -thisScale.x;
+		transform.localScale = thisScale;
 	}
 
 	void FixedUpdate() {
-		// 5 - Move the game object
-
-		rigidbody2D.velocity = movement;
-		if(grounded && Input.GetKeyDown (KeyCode.W)){
-			rigidbody2D.AddForce (new Vector2(0,jumpForce));
-//			grounded = false;
-		}
-
 	}
+
+
+
 }

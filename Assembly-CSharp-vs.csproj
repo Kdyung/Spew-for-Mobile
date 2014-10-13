@@ -48,6 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Jump.cs" />
      <Compile Include="Assets\Scripts\Lava.cs" />
+     <Compile Include="Assets\Scripts\MeltableController.cs" />
+     <Compile Include="Assets\Scripts\MoveLeft.cs" />
+     <Compile Include="Assets\Scripts\MoveRight.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
