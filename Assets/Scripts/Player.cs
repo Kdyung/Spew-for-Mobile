@@ -2,7 +2,6 @@
  * This is a Player script that is for demoing that uses keyboard inputs
  * and applies animations.
  * 
-
  **/
 
 using UnityEngine;
@@ -10,12 +9,12 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 	public Vector2 speed = new Vector2(10,10);
-	public Vector2 movement;
+	public float inputX;
 	public bool grounded = true;
 //	public float onGround;
 	public float jumpForce = 1000f;
 
-	//Animation Control
+	//Animation Control variables
 	private Animator anim;
 	private bool facingRight;
 
@@ -60,22 +59,24 @@ public class Player : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		float inputX = Input.GetAxis("Horizontal");
-		movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
+		inputX = Input.GetAxis("Horizontal");
+		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
 		rigidbody2D.velocity = movement;
 
+		//Refreshes Animator parameters if moving left/right
 		if (inputX != 0) {
 			anim.SetBool("moving",true);
 		}else{
 			anim.SetBool ("moving",false);
-			}
+		}
 
+		//Jumping @TODO
 		if(grounded && Input.GetKeyDown(KeyCode.W)){
 			rigidbody2D.AddForce (new Vector2(0,jumpForce));
 			jumpButton.audio.Play();
 		}
 
-		//Animation controller
+		//Flipping Animation controller
 		if (inputX > 0 && !facingRight) 
 		{
 				Flip();
@@ -85,7 +86,7 @@ public class Player : MonoBehaviour {
 
 	}
 
-	//Reverses xscale
+	//function that reverses the x scale for animation purposes
 	void Flip(){
 		facingRight = !facingRight;
 		Vector3 thisScale = transform.localScale;
@@ -95,7 +96,5 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() {
 	}
-
-
 
 }
