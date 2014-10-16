@@ -15,8 +15,13 @@ public class Player : MonoBehaviour {
 	public float jumpForce = 1000f;
 
 	//check for ground collision
+		//from http://unity3d.com/learn/tutorials/modules/beginner/2d/2d-controllers
 	public bool grounded;
-	public Transform groundEnd;
+	public Transform groundCheck;	//Assigned through inspector
+	public LayerMask whatIsGround; //Assigned through inspector
+	float groundRadius = 0.2f;
+
+
 
 	//Animation Control variables
 	private Animator anim;
@@ -42,67 +47,48 @@ public class Player : MonoBehaviour {
 		facingRight = true;
 		anim = GetComponent<Animator> ();
 	}
-
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		string hitObject = collision.gameObject.name;
-		if(hitObject == "tile_1" || hitObject == "tile_0")
-		{
-			grounded = true;
-			Debug.Log("grounded");
-		}
-	}
-	void OnCollisionExit2D(Collision2D collision)
-	{
-		string hitObject = collision.gameObject.name;
-		if (hitObject == "tile_1" || hitObject == "tile_0") 
-		{
-			grounded = false;
-			Debug.Log("not grounded");
-		}
-	}
-
-
+	
 	// Update is called once per frame
 	void Update () {
+
 		inputX = Input.GetAxis("Horizontal");
 		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
-		//Jumping @TODO
-		if(Input.GetKeyDown(KeyCode.W) && grounded){
+
+		//Jumping
+		//if(Input.GetAxis("Jump")>0 && grounded){//Jump Defined in Input Manager, Jumpforce = 300
+		if(Input.GetKeyDown(KeyCode.W) && grounded){ //JumpForce = 1000;
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 			jumpButton.audio.Play();
-		}
-		
-		rigidbody2D.velocity = movement;
-
-
-
-		//Refreshes Animator parameters if moving left/right
-		if (inputX != 0) {
-			anim.SetBool("moving",true);
-		}else{
-			anim.SetBool ("moving",false);
-		}
-
-
-
-		//Flipping Animation controller
-		if (inputX > 0 && !facingRight) 
-		{
-				Flip();
-		} else if (inputX < 0 && facingRight){
-				Flip();
+			anim.SetBool ("grounded",false);
 		}
 
 		//Apply movement to rigidbody2D
 		rigidbody2D.velocity = movement;
+
+		//Refreshes Animator parameters if moving left/right
+		if (inputX != 0) {
+						anim.SetBool ("moving", true);
+				} else {
+						anim.SetBool ("moving", false);
+				}
+		//Flipping Animation controller
+		if (inputX > 0 && !facingRight){
+			Flip();
+		} else if (inputX < 0 && facingRight){
+			Flip();
+		}
 	}
 
+	void FixedUpdate() {
+		
+		//groundCheck
+		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 
 
 
 
-
+	}
+	
 	//function that reverses the x scale for animation purposes
 	void Flip(){
 		facingRight = !facingRight;
@@ -110,21 +96,6 @@ public class Player : MonoBehaviour {
 		thisScale.x = -thisScale.x;
 		transform.localScale = thisScale;
 	}
-
-	void FixedUpdate() {
-	}
-	
-	/*
-	public bool isGrounded(){
-				bool result = Physics2D.Linecast (myPos, groundCheckPos, 1 << LayerMask.NameToLayer ("Ground"));
-				if (result) {
-						Debug.DrawLine (myPos, groundCheckPos, Color.green, 0.5f, false);
-				} else {
-						Debug.DrawLine (myPos, groundCheckPos, Color.red, 0.5f, false);
-				}
-				return result;
-		}
-		*/
 }
 
 
