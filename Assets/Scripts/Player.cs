@@ -10,9 +10,13 @@ using System.Collections;
 public class Player : MonoBehaviour {
 	public Vector2 speed = new Vector2(10,10);
 	public float inputX;
-	public bool grounded = true;
+
 //	public float onGround;
 	public float jumpForce = 1000f;
+
+	//check for ground collision
+	public bool grounded;
+	public Transform groundEnd;
 
 	//Animation Control variables
 	private Animator anim;
@@ -41,18 +45,20 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if(collision.gameObject.name == "Platforms")
+		string hitObject = collision.gameObject.name;
+		if(hitObject == "tile_1" || hitObject == "tile_0")
 		{
 			grounded = true;
-			System.Console.WriteLine("grounded");
+			Debug.Log("grounded");
 		}
 	}
 	void OnCollisionExit2D(Collision2D collision)
 	{
-		if (collision.gameObject.name == "Platforms") 
+		string hitObject = collision.gameObject.name;
+		if (hitObject == "tile_1" || hitObject == "tile_0") 
 		{
 			grounded = false;
-			System.Console.WriteLine("not grounded");
+			Debug.Log("not grounded");
 		}
 	}
 
@@ -61,7 +67,15 @@ public class Player : MonoBehaviour {
 	void Update () {
 		inputX = Input.GetAxis("Horizontal");
 		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
+		//Jumping @TODO
+		if(Input.GetKeyDown(KeyCode.W) && grounded){
+			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			jumpButton.audio.Play();
+		}
+		
 		rigidbody2D.velocity = movement;
+
+
 
 		//Refreshes Animator parameters if moving left/right
 		if (inputX != 0) {
@@ -70,11 +84,7 @@ public class Player : MonoBehaviour {
 			anim.SetBool ("moving",false);
 		}
 
-		//Jumping @TODO
-		if(grounded && Input.GetKeyDown(KeyCode.W)){
-			rigidbody2D.AddForce (new Vector2(0,jumpForce));
-			jumpButton.audio.Play();
-		}
+
 
 		//Flipping Animation controller
 		if (inputX > 0 && !facingRight) 
@@ -84,7 +94,14 @@ public class Player : MonoBehaviour {
 				Flip();
 		}
 
+		//Apply movement to rigidbody2D
+		rigidbody2D.velocity = movement;
 	}
+
+
+
+
+
 
 	//function that reverses the x scale for animation purposes
 	void Flip(){
@@ -96,5 +113,19 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() {
 	}
-
+	
+	/*
+	public bool isGrounded(){
+				bool result = Physics2D.Linecast (myPos, groundCheckPos, 1 << LayerMask.NameToLayer ("Ground"));
+				if (result) {
+						Debug.DrawLine (myPos, groundCheckPos, Color.green, 0.5f, false);
+				} else {
+						Debug.DrawLine (myPos, groundCheckPos, Color.red, 0.5f, false);
+				}
+				return result;
+		}
+		*/
 }
+
+
+
