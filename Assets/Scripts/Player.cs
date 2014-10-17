@@ -88,6 +88,7 @@ public class Player : MonoBehaviour {
 			} else {
 			anim.SetBool ("spewing", false);
 		}
+
 		//Flipping Animation controller
 		if (inputX > 0 && !facingRight){
 			Flip();
