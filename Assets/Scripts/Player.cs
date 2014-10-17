@@ -26,10 +26,11 @@ public class Player : MonoBehaviour {
 	//Animation Control variables
 	private Animator anim;
 	private bool facingRight;
+	public bool spewing;
 
 
-
-	//takes in button input as well
+	//takes in button gameobject as well
+	//The buttons
 	//private GameObject rightButton;
 	//private GameObject leftButton;
 	private GameObject spewButton;
@@ -45,6 +46,8 @@ public class Player : MonoBehaviour {
 		spewButton = GameObject.Find ("button_spew");
 
 		facingRight = true;
+		spewing = false;
+
 		anim = GetComponent<Animator> ();
 	}
 	
@@ -55,22 +58,36 @@ public class Player : MonoBehaviour {
 		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
 
 		//Jumping
-		//if(Input.GetAxis("Jump")>0 && grounded){//Jump Defined in Input Manager, Jumpforce = 300
-		if(Input.GetKeyDown(KeyCode.W) && grounded){ //JumpForce = 1000;
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-			jumpButton.audio.Play();
-			anim.SetBool ("grounded",false);
+		if(Input.GetButtonDown("Jump")){ //JumpForce = 1000;
+			Jump ();
 		}
+
+		if (Input.GetButtonDown ("Spew")) {
+			Debug.Log ("Spewing!");
+				Spew ();
+				spewing = true;
+		} else if (Input.GetButtonUp("Spew")){
+			Debug.Log ("NotSpewing!");
+				spewing = false;
+		}
+
+
+
 
 		//Apply movement to rigidbody2D
 		rigidbody2D.velocity = movement;
 
-		//Refreshes Animator parameters if moving left/right
+		//Refresh Animator parameters
 		if (inputX != 0) {
-						anim.SetBool ("moving", true);
-				} else {
-						anim.SetBool ("moving", false);
-				}
+					anim.SetBool ("moving", true);
+			} else {
+					anim.SetBool ("moving", false);
+		}
+		if (spewing) {
+			anim.SetBool ("spewing", true);
+			} else {
+			anim.SetBool ("spewing", false);
+		}
 		//Flipping Animation controller
 		if (inputX > 0 && !facingRight){
 			Flip();
@@ -88,7 +105,20 @@ public class Player : MonoBehaviour {
 
 
 	}
-	
+
+	//Jump defined in function to allow calling from external scripts using natural conditions
+	public void Jump(){
+			if (grounded) {
+				rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
+				jumpButton.audio.Play ();
+				anim.SetBool ("grounded", false);
+			}
+	}
+
+	void Spew(){
+			spewButton.audio.Play();
+	}
+
 	//function that reverses the x scale for animation purposes
 	void Flip(){
 		facingRight = !facingRight;
