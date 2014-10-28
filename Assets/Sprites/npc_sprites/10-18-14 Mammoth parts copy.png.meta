@@ -3,6 +3,22 @@ guid: 4d4ead3c4e1c00441b8a5754f2cd0fd7
 TextureImporter:
   fileIDToRecycleName:
     21300000: 10-18-14 Mammoth parts copy
+    21300002: 10-18-14 Mammoth parts copy_0
+    21300004: 10-18-14 Mammoth parts copy_1
+    21300006: 10-18-14 Mammoth parts copy_3
+    21300008: 10-18-14 Mammoth parts copy_4
+    21300010: 10-18-14 Mammoth parts copy_5
+    21300012: 10-18-14 Mammoth parts copy_6
+    21300014: 10-18-14 Mammoth parts copy_8
+    21300016: 10-18-14 Mammoth parts copy_15
+    21300018: 10-18-14 Mammoth parts copy_16
+    21300020: 10-18-14 Mammoth parts copy_17
+    21300022: 10-18-14 Mammoth parts copy_31
+    21300024: 10-18-14 Mammoth parts copy_32
+    21300026: 10-18-14 Mammoth parts copy_33
+    21300028: 10-18-14 Mammoth parts copy_34
+    21300030: 10-18-14 Mammoth parts copy_34
+    21300032: 10-18-14 Mammoth parts copy_34
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,13 +42,13 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -43,6 +59,166 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: 10-18-14 Mammoth parts copy_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 2593
+        width: 801
+        height: 956
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_1
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 2255
+        width: 1330
+        height: 1294
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 2010
+        width: 211
+        height: 266
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_4
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1587
+        width: 491
+        height: 250
+      alignment: 9
+      pivot: {x: .804044187, y: .635713875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 1176
+        width: 232
+        height: 320
+      alignment: 9
+      pivot: {x: .558497488, y: .786272049}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_6
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1257
+        width: 271
+        height: 278
+      alignment: 9
+      pivot: {x: .533808947, y: .65749532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_8
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 912
+        width: 162
+        height: 225
+      alignment: 9
+      pivot: {x: .479056478, y: .786507726}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_15
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 670
+        width: 144
+        height: 165
+      alignment: 9
+      pivot: {x: .423433095, y: .780652225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_16
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 497
+        width: 239
+        height: 317
+      alignment: 9
+      pivot: {x: .5, y: .729555547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_17
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 497
+        width: 239
+        height: 317
+      alignment: 9
+      pivot: {x: .536906123, y: .708686888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_31
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 58
+        width: 231
+        height: 306
+      alignment: 9
+      pivot: {x: .471280187, y: .817076623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_32
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 62
+        width: 231
+        height: 306
+      alignment: 9
+      pivot: {x: .471280187, y: .817076623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_33
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 178
+        width: 302
+        height: 488
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_34
+      rect:
+        serializedVersion: 2
+        x: 2084
+        y: 178
+        width: 341
+        height: 488
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_34
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 1693
+        width: 689
+        height: 703
+      alignment: 9
+      pivot: {x: .642805099, y: .350385904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-18-14 Mammoth parts copy_34
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 786
+        width: 1027
+        height: 945
+      alignment: 9
+      pivot: {x: .353177249, y: .514028132}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
