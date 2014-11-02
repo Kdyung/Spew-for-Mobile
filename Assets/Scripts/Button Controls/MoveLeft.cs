@@ -4,20 +4,15 @@ using System.Collections;
 public class MoveLeft : MonoBehaviour
 {
     public Vector3 moveSpeed = new Vector3();
-    private bool moving = false;
-    private GameObject[] scene;
-    private GameObject bg;
-    
-    // Use this for initialization
+	public Player hero;
+
+	// Use this for initialization
     void Start()
     {
 		//Hide and disable button if not on mobile
 		GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 		collider.enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
 
-
-        scene = GameObject.FindGameObjectsWithTag("Moveable");
-        bg = GameObject.Find("Platforms");
     }
     
     // Update is called once per frame
@@ -49,18 +44,6 @@ public class MoveLeft : MonoBehaviour
                 CheckTouch(Input.mousePosition, "ended");
             }
         }
-        
-        // Move if button is pressed
-        if (moving && bg.transform.position.x < 4.82f)
-        {
-            for (int i = 0; i < scene.Length; i++)
-            {
-                if (scene [i] != null)
-                {
-                    scene [i].transform.position += moveSpeed;
-                }
-            }
-        }
     }
     
     void CheckTouch(Vector3 pos, string phase)
@@ -69,14 +52,18 @@ public class MoveLeft : MonoBehaviour
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D hit = Physics2D.OverlapPoint(touchPos);
         
-        if (hit.gameObject.name == "LeftButton" && hit && phase == "began")
+		while (hit.gameObject.name == "button_left" && hit && phase == "began") {
+			hero.moveLeft ();
+		}
+        if (hit.gameObject.name == "button_left" && hit && phase == "began")
         {
-            moving = true;
+			Debug.Log("Left ");
+			hero.moveLeft();
         }
         
-        if (hit.gameObject.name == "LeftButton" && hit && phase == "ended")
+        if (hit.gameObject.name == "button_left" && hit && phase == "ended")
         {
-            moving = false;
+
         }
     } 
 }

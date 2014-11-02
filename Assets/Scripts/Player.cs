@@ -53,8 +53,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		inputX = Input.GetAxis("Horizontal");
+		//inputX = Input.GetAxis("Horizontal");
 		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
 
 		//Jumping
@@ -107,6 +106,16 @@ public class Player : MonoBehaviour {
 
 	}
 
+
+	public void moveLeft(){
+		Debug.Log ("moveLeft");
+		inputX = 1;
+	}
+	public void moveRight(){
+		Debug.Log ("moveRight");
+		inputX = -1;
+	}
+
 	//Jump defined in function to allow calling from external scripts using natural conditions
 	public void Jump(){
 			if (grounded) {
@@ -114,6 +123,10 @@ public class Player : MonoBehaviour {
 				jumpButton.audio.Play ();
 				anim.SetBool ("grounded", false);
 			}
+	}
+
+	public void getInputX(float x){
+		inputX = x;
 	}
 
 	void Spew(){

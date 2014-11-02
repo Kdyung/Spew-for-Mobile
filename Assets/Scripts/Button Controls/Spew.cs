@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Spew : MonoBehaviour {
 
+	public Player hero; //Variable for accessing Player.cs scripts
+
 	// Use this for initialization
 	void Start () {
 		//Hide and disable button if not on mobile

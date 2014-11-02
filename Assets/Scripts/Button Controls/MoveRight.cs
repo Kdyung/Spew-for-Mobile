@@ -4,15 +4,11 @@ using System.Collections;
 public class MoveRight : MonoBehaviour
 {
     public Vector3 moveSpeed = new Vector3();
-    private bool moving = false;
-    private GameObject[] scene;
-    private GameObject bg;
-    public AudioClip completeSound;
-    private GameObject[] buttons;
-    private GameObject completeText;
-    private bool ended = false;
-    
-    // Use this for initialization
+
+	public Player hero;
+
+
+	// Use this for initialization
     void Start()
     {
 		//Hide and disable button if not on mobile
@@ -20,9 +16,6 @@ public class MoveRight : MonoBehaviour
 		collider.enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
 
 
-		scene = GameObject.FindGameObjectsWithTag("Moveable");
-        bg = GameObject.Find("Background");
-        buttons = GameObject.FindGameObjectsWithTag("Buttons");
     }
     
     // Update is called once per frame
@@ -61,15 +54,19 @@ public class MoveRight : MonoBehaviour
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D hit = Physics2D.OverlapPoint(touchPos);
-            
-        if (hit.gameObject.name == "RightButton" && hit && phase == "began")
+		while (hit.gameObject.name == "button_right" && hit && phase == "began") {
+			hero.moveRight ();
+		}
+
+		if (hit.gameObject.name == "button_right" && hit && phase == "began")
         {
-            moving = true;
+			Debug.Log("Right");
+			hero.moveRight ();
         }
                 
-        if (hit.gameObject.name == "RightButton" && hit && phase == "ended")
+        if (hit.gameObject.name == "button_right" && hit && phase == "ended")
         {
-            moving = false;
+
         }
     }
 }
