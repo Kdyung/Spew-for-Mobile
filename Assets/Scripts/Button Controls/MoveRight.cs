@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveRight : MonoBehaviour
 {
-    public Vector3 moveSpeed = new Vector3();
+    //public Vector3 moveSpeed = new Vector3();
 	public bool isDown;
 	public Player hero;
 

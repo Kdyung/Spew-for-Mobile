@@ -22,7 +22,6 @@ public class Player : MonoBehaviour {
 	float groundRadius = 0.2f;
 
 
-
 	//Animation Control variables
 	private Animator anim;
 	private bool facingRight;
@@ -35,6 +34,10 @@ public class Player : MonoBehaviour {
 	//private GameObject leftButton;
 	private GameObject spewButton;
 	private GameObject jumpButton;
+
+
+	public MoveLeft leftButton; //Assigned in Inspector
+	public MoveRight rightButton; //Assigned in Inspector
 
 
 
@@ -53,7 +56,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//inputX = Input.GetAxis("Horizontal");
+		if (Application.platform == RuntimePlatform.WindowsEditor) {
+		}else if (Application.platform == RuntimePlatform.WindowsPlayer){
+			inputX = Input.GetAxis ("Horizontal");
+		}
+
 		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
 
 		//Jumping
@@ -106,18 +113,12 @@ public class Player : MonoBehaviour {
 
 	}
 
-
-	public void moveLeft(){
-		Debug.Log ("moveLeft");
-		inputX = 0;
-	}
-	public void moveRight(){
-		Debug.Log ("moveRight");
-		inputX = 1;
-	}
+	//External access of InputX
 	public void getInputX(float x){
 		inputX = x;
 	}
+
+
 	//Jump defined in function to allow calling from external scripts using natural conditions
 	public void Jump(){
 			if (grounded) {

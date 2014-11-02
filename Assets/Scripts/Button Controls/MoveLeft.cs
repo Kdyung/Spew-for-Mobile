@@ -54,7 +54,7 @@ public class MoveLeft : MonoBehaviour
 	{
 		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
-		Collider2D hit = CircleCollider2D.OverlapPoint(touchPos);
+		Collider2D hit = Physics2D.OverlapPoint(touchPos);
 		
 		if (hit.gameObject.name == name && hit && phase == "began")
 		{
