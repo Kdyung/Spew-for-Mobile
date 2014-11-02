@@ -54,9 +54,11 @@ public class MoveLeft : MonoBehaviour
 	{
 		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
-		Collider2D hit = Physics2D.OverlapPoint(touchPos);
 
-		Debug.Log(hit.transform.gameObject.name);
+		LayerMask mask = LayerMask.GetMask ("Controller");//only hit controller Layer
+
+		Collider2D hit = Physics2D.OverlapPoint(touchPos,mask);
+
 		if (collider2D == hit && hit && phase == "began")
 		{
 			isDown = true;

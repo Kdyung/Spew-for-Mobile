@@ -55,7 +55,8 @@ public class MoveRight : MonoBehaviour
 		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
 
-		Collider2D hit = Physics2D.OverlapPoint(touchPos);
+		LayerMask mask = LayerMask.GetMask ("Controller"); //Layer mask for avoiding collision with non gui
+		Collider2D hit = Physics2D.OverlapPoint(touchPos, mask);
 
 		if (collider2D == hit && hit && phase == "began")
         {
