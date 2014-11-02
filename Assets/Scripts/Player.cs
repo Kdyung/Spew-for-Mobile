@@ -109,13 +109,15 @@ public class Player : MonoBehaviour {
 
 	public void moveLeft(){
 		Debug.Log ("moveLeft");
-		inputX = 1;
+		inputX = 0;
 	}
 	public void moveRight(){
 		Debug.Log ("moveRight");
-		inputX = -1;
+		inputX = 1;
 	}
-
+	public void getInputX(float x){
+		inputX = x;
+	}
 	//Jump defined in function to allow calling from external scripts using natural conditions
 	public void Jump(){
 			if (grounded) {
@@ -123,10 +125,6 @@ public class Player : MonoBehaviour {
 				jumpButton.audio.Play ();
 				anim.SetBool ("grounded", false);
 			}
-	}
-
-	public void getInputX(float x){
-		inputX = x;
 	}
 
 	void Spew(){

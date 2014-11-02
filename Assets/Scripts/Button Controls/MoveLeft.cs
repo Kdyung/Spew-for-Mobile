@@ -3,67 +3,70 @@ using System.Collections;
 
 public class MoveLeft : MonoBehaviour
 {
-    public Vector3 moveSpeed = new Vector3();
+	//public Vector3 moveSpeed = new Vector3();
+	public bool isDown;
 	public Player hero;
-
+	
+	
 	// Use this for initialization
-    void Start()
-    {
+	void Start()
+	{
 		//Hide and disable button if not on mobile
 		GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-		collider.enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
-
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.touchCount > 0)
-            {
-                if (Input.GetTouch(0).phase == TouchPhase.Began)
-                { 
-                    CheckTouch(Input.GetTouch(0).position, "began");
-                } else if (Input.GetTouch(0).phase == TouchPhase.Ended)
-                {
-                    CheckTouch(Input.GetTouch(0).position, "ended");
-                }
-            }
-        }
-        
-        if (Application.platform == RuntimePlatform.WindowsEditor)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                CheckTouch(Input.mousePosition, "began");
-            }
-            
-            if (Input.GetMouseButtonUp(0))
-            {
-                CheckTouch(Input.mousePosition, "ended");
-            }
-        }
-    }
-    
-    void CheckTouch(Vector3 pos, string phase)
-    {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
-        Vector2 touchPos = new Vector2(wp.x, wp.y);
-        Collider2D hit = Physics2D.OverlapPoint(touchPos);
-        
-		while (hit.gameObject.name == "button_left" && hit && phase == "began") {
-			hero.moveLeft ();
+		GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
+		
+		
+	}
+	
+	// Update is called once per frame
+	void Update()
+	{
+		if (Application.platform == RuntimePlatform.Android)
+		{
+			if (Input.touchCount > 0)
+			{
+				if (Input.GetTouch(0).phase == TouchPhase.Began)
+				{ 
+					CheckTouch(Input.GetTouch(0).position, "began");
+				} else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+				{
+					CheckTouch(Input.GetTouch(0).position, "ended");
+				}
+			}
 		}
-        if (hit.gameObject.name == "button_left" && hit && phase == "began")
-        {
-			Debug.Log("Left ");
-			hero.moveLeft();
-        }
-        
-        if (hit.gameObject.name == "button_left" && hit && phase == "ended")
-        {
-
-        }
-    } 
+		
+		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+		{
+			if (Input.GetMouseButtonDown(0))
+			{
+				CheckTouch(Input.mousePosition, "began");
+			}
+			
+			if (Input.GetMouseButtonUp(0))
+			{
+				CheckTouch(Input.mousePosition, "ended");
+			}
+		}
+	}
+	
+	
+	void CheckTouch(Vector3 pos, string phase)
+	{
+		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
+		Vector2 touchPos = new Vector2(wp.x, wp.y);
+		Collider2D hit = CircleCollider2D.OverlapPoint(touchPos);
+		
+		if (hit.gameObject.name == name && hit && phase == "began")
+		{
+			isDown = true;
+			Debug.Log("Left");
+			hero.getInputX(-1);
+		}
+		
+		if (hit.gameObject.name == name && hit && phase == "ended")
+		{
+			isDown = false;
+			hero.getInputX(0);
+		}
+	}
 }
