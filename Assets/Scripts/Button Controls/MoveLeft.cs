@@ -55,15 +55,16 @@ public class MoveLeft : MonoBehaviour
 		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
 		Collider2D hit = Physics2D.OverlapPoint(touchPos);
-		
-		if (hit.gameObject.name == name && hit && phase == "began")
+
+		Debug.Log(hit.transform.gameObject.name);
+		if (collider2D == hit && hit && phase == "began")
 		{
 			isDown = true;
 			Debug.Log("Left");
 			hero.getInputX(-1);
 		}
 		
-		if (hit.gameObject.name == name && hit && phase == "ended")
+		if (collider2D == hit && hit && phase == "ended")
 		{
 			isDown = false;
 			hero.getInputX(0);

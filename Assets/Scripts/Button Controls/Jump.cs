@@ -54,8 +54,8 @@ public class Jump : MonoBehaviour
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
         Collider2D hit = Physics2D.OverlapPoint(touchPos);
-        
-        if (hit.gameObject.name == "button_jump" && hit && phase == "began")
+
+		if (collider2D == hit && hit && phase == "began")
         {
 			Debug.Log("Jumping");
 			hero.Jump();

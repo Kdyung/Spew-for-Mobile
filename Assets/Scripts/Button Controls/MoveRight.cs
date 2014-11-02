@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveRight : MonoBehaviour
 {
-    //public Vector3 moveSpeed = new Vector3();
+    public Vector3 moveSpeed = new Vector3();
 	public bool isDown;
 	public Player hero;
 
@@ -54,16 +54,17 @@ public class MoveRight : MonoBehaviour
     {
 		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
+
 		Collider2D hit = Physics2D.OverlapPoint(touchPos);
 
-		if (hit.gameObject.name == name && hit && phase == "began")
+		if (collider2D == hit && hit && phase == "began")
         {
 			isDown = true;
 			Debug.Log("Right");
 			hero.getInputX(1);
         }
                 
-        if (hit.gameObject.name == "button_right" && hit && phase == "ended")
+		if (collider2D == hit && hit && phase == "ended")
         {
 			isDown = false;
 			hero.getInputX(0);
