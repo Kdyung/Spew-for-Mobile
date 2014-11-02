@@ -11,7 +11,9 @@ public class Jump : MonoBehaviour
 
     void Start()
     {
-        //hero = GameObject.Find("Player");
+		//Hide and disable button if not on mobile
+		GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+		collider.enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
 
     }
     
@@ -32,9 +34,9 @@ public class Jump : MonoBehaviour
             }
         }
         
-        if (Application.platform == RuntimePlatform.WindowsEditor)
-        {
-            if (Input.GetMouseButtonDown(0))
+		if (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer)
+		{
+			if (Input.GetMouseButtonDown(0))
             {
                 CheckTouch(Input.mousePosition, "began");
             }
@@ -46,6 +48,7 @@ public class Jump : MonoBehaviour
         }
     }
 
+	//Checks if button is being pressed in Mobile or the Windows Editor
     void CheckTouch(Vector3 pos, string phase)
     {
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);

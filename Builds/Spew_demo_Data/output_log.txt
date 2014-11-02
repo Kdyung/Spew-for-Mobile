@@ -1,0 +1,36 @@
+Initialize engine version: 4.5.3f3 (fca41a4fabea)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) HD 6620G (ID=0x9641)
+    Vendor:   ATI
+    VRAM:     495 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.738 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+NullReferenceException: Object reference not set to an instance of an object
+  at MoveLeft.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Jump.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at MoveRight.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Spew.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

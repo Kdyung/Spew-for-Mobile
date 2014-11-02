@@ -180,26 +180,6 @@ TextureImporter:
       alignment: 9
       pivot: {x: .471280187, y: .817076623}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 10-18-14 Mammoth parts copy_33
-      rect:
-        serializedVersion: 2
-        x: 1567
-        y: 178
-        width: 302
-        height: 488
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 10-18-14 Mammoth parts copy_34
-      rect:
-        serializedVersion: 2
-        x: 2084
-        y: 178
-        width: 341
-        height: 488
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: 10-18-14 Mammoth parts copy_34
       rect:
         serializedVersion: 2
