@@ -3,21 +3,14 @@ using System.Collections;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpForce;
-    //private GameObject hero;
-    // Use this for initialization
-
 	public Player hero; //Variable for accessing Player.cs scripts
 
-	public Collider2D selfCol;
 
     void Start()
     {
 		//Hide and disable button if not on mobile
 		GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 		GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
-
-		selfCol = GetComponent<Collider2D>();
     }
     
     // Update is called once per frame
@@ -56,12 +49,9 @@ public class Jump : MonoBehaviour
     {
         Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
         Vector2 touchPos = new Vector2(wp.x, wp.y);
-
 		LayerMask mask = LayerMask.GetMask ("Controller");//only hit Controller Layer
-
 		Collider2D hit = Physics2D.OverlapPoint(touchPos,mask);
-		Debug.Log ("Hit "+hit.transform.gameObject.name+" "+hit);
-			
+
 		if (collider2D == hit && hit && phase == "began")
         {
 			Debug.Log("Jumping");

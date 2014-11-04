@@ -5,6 +5,7 @@ TextureImporter:
     21300000: 10-31-14 Spew props copy
     21300002: 10-31-14 Spew props copy_1
     21300004: 10-31-14 Spew props copy_2
+    21300006: 10-31-14 Spew props copy_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -63,6 +64,16 @@ TextureImporter:
         y: 131
         width: 434
         height: 396
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 10-31-14 Spew props copy_2
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 169
+        width: 304
+        height: 304
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,6 +1,7 @@
 ﻿/** 
  * This is a Player script that is for demoing that uses keyboard inputs
  * and applies animations.
+ * Has Button inputs built in through the Project Input Settings.
  * 
  **/
 
@@ -8,10 +9,10 @@ using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
-	public Vector2 speed = new Vector2(10,10);
-	public float inputX;
 
-//	public float onGround;
+	private Vector2 speed = new Vector2(10,10);
+	public float inputX;
+	
 	public float jumpForce = 1000f;
 
 	//check for ground collision
@@ -28,26 +29,16 @@ public class Player : MonoBehaviour {
 	public bool spewing;
 
 
-	//takes in button gameobject as well
-	//The buttons
-	//private GameObject rightButton;
-	//private GameObject leftButton;
-	private GameObject spewButton;
-	private GameObject jumpButton;
+	//takes in public audio source (since this is simple game, only two needed).
+	public AudioSource spewAudio;
+	public AudioSource jumpAudio; 
 
-
-	public MoveLeft leftButton; //Assigned in Inspector
-	public MoveRight rightButton; //Assigned in Inspector
+	public ButtonController buttons;
 
 
 
 	// Use this for initialization
 	void Start () {
-		//leftButton = GameObject.Find ("button_left");
-		//rightButton = GameObject.Find("button_right");
-		jumpButton = GameObject.Find ("button_jump");
-		spewButton = GameObject.Find ("button_spew");
-
 		facingRight = true;
 		spewing = false;
 
@@ -56,46 +47,39 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Application.platform == RuntimePlatform.WindowsEditor) {
-		}else if (Application.platform == RuntimePlatform.WindowsPlayer){
-			inputX = Input.GetAxis ("Horizontal");
+		//Activate Input Settings (Keyboard) if not on mobile
+		if ( Application.platform != RuntimePlatform.Android){
+			if(!buttons.isActive){ //If the button controller is being used, deactivate Keyboard controls
+				inputX = Input.GetAxis ("Horizontal");
+
+				if(Input.GetButtonDown("Jump")){
+					Jump ();
+				}
+				if (Input.GetButtonDown ("Spew")) {
+					Spew ();
+					spewing = true;
+				} else if (Input.GetButtonUp("Spew")){
+					spewing = false;
+				}
+			}
 		}
 
 		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = movement;//Apply movement to rigidbody2D
 
-		//Jumping
-		if(Input.GetButtonDown("Jump")){ //JumpForce = 1000;
-			Jump ();
-		}
-
-		if (Input.GetButtonDown ("Spew")) {
-			Debug.Log ("Spewing!");
-				Spew ();
-				spewing = true;
-		} else if (Input.GetButtonUp("Spew")){
-			Debug.Log ("NotSpewing!");
-				spewing = false;
-		}
-
-
-
-
-		//Apply movement to rigidbody2D
-		rigidbody2D.velocity = movement;
 
 		//Refresh Animator parameters
 		if (inputX != 0) {
-					anim.SetBool ("moving", true);
-			} else {
-					anim.SetBool ("moving", false);
+			anim.SetBool ("moving", true);
+		} else {
+			anim.SetBool ("moving", false);
 		}
 		if (spewing) {
 			anim.SetBool ("spewing", true);
-			} else {
+		} else {
 			anim.SetBool ("spewing", false);
 		}
-
-		//Flipping Animation controller
+		//Flipping Animation
 		if (inputX > 0 && !facingRight){
 			Flip();
 		} else if (inputX < 0 && facingRight){
@@ -104,14 +88,11 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		
-		//groundCheck
+		//groundCheck for grounded Character
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 
-
-
-
 	}
+
 
 	//External access of InputX
 	public void getInputX(float x){
@@ -123,16 +104,17 @@ public class Player : MonoBehaviour {
 	public void Jump(){
 			if (grounded) {
 				rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
-				jumpButton.audio.Play ();
+				jumpAudio.Play ();
 				anim.SetBool ("grounded", false);
 			}
 	}
 
-	void Spew(){
-			spewButton.audio.Play();
+	//Spew defined in function
+	public void Spew(){
+			spewAudio.Play();
 	}
 
-	//function that reverses the x scale for animation purposes
+	//Reverses the x scale for animation purposes
 	void Flip(){
 		facingRight = !facingRight;
 		Vector3 thisScale = transform.localScale;
