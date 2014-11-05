@@ -44,8 +44,8 @@ public class Exitbutton : MonoBehaviour{
 				Collider2D hit = Physics2D.OverlapPoint (touchPos, mask);
 
 				if (collider2D == hit && hit && phase == "began") {
-					Debug.Log ("Exit Game");
-					Application.Quit ();
+					Debug.Log ("Exit DropGame");
+					Application.LoadLevel("mainmenu");
 				}
 		}
 }

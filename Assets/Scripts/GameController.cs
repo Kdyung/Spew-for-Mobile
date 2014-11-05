@@ -7,7 +7,6 @@ using System.Collections;
  * */
 
 public class GameController : MonoBehaviour {
-	private int totalScore = 0; //combined total of players score
 	private int highscore = 0; //highest score player has gotten
 
 	public GUIText scoreText;
@@ -15,6 +14,8 @@ public class GameController : MonoBehaviour {
 	private bool gameOver;
 	private bool restart;
 	private int score;//current score
+
+	public Player hero;
 
 	void Start(){
 		highscore = PlayerPrefs.GetInt ("High Score");
@@ -30,7 +31,7 @@ public class GameController : MonoBehaviour {
 			Debug.Log("High Score is " + highscore );
 		}
 	}
-	/**
+	/*
 	void OnTriggerEnter(other : Collider)
 	{
 		//add to players score if he collects a gem
@@ -40,5 +41,5 @@ public class GameController : MonoBehaviour {
 			Debug.Log("Your score is " + score);
 			Destroy(other.gameObject); //Destroys Gem after player collects it
 		}
-	}**/
+	}*/
 }
