@@ -8,11 +8,12 @@ using System.Collections;
  * */
 
 public class DropGameController : MonoBehaviour {
-	private int score = 0;//current score
+	private int score = 100;//current score
 	private int totalScore = 0; //combined total of players score
-	private int highscore = 0; //highest score player has gotten
+	private int highscore = 100; //highest score player has gotten
 	private float spawnTime = 5.0f; //Every 5 seconds (5.0f) 
-
+	private float incrementTime = 1.0f;
+	private float minTime = 1.0f;
 
 	public GUIText scoreText;
 	public GUIText hiscoreText;
@@ -20,7 +21,7 @@ public class DropGameController : MonoBehaviour {
 	private bool gameOver;
 	private bool restart;
 	
-	public Vector2 spawnValues;
+	public Vector2 spawnValues;//spawing object height determined by outside
 	
 	public Player hero;
 	public GameObject gameOverZone;
@@ -62,15 +63,26 @@ public class DropGameController : MonoBehaviour {
 			Quaternion spawnRotation = Quaternion.identity;
 			Instantiate (rockObject, spawnPosition, spawnRotation);
 	}
-	/*
-	void OnTriggerEnter(other : Collider)
-	{
+
+	void pickUpCollision(GameObject other){
+		Debug.Log ("COLLISION DETECTED)");
 		//add to players score if he collects a gem
-		if(other.gameObject.name == "meat" || other.gameObject.name == "meat(Clone)")
-		{
-			score += 10;
-			Debug.Log("Your score is " + score);
-			Destroy(other.gameObject); //Destroys Gem after player collects it
+		int displayscore = 10;
+			//If the object picked up is meat, 
+		//if (other.tag != "TileDestroyer"){ //rough way of checking if it's not a rock
+		if (other.name == "meat" || other.name == "meat(Clone)") {
+				displayscore = 100;
+				//changing the spawntime and making it faster
+				if (spawnTime > minTime) {
+						spawnTime -= incrementTime;
+						//Only way I can find  at the moment to change the spawn time is to cancel and reinvoke
+						CancelInvoke ("spawnObjects");
+						InvokeRepeating ("spawnObjects", 0.01f, spawnTime); 
+				}
 		}
-	}*/
+
+		score += displayscore;
+		Debug.Log("Your score is " + score);
+		Destroy(other.gameObject);
+	}
 }

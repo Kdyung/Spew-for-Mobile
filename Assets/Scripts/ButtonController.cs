@@ -22,14 +22,11 @@ public class ButtonController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Hides the Buttons if playing on the wrong platform
-			ButtonLeft.GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-			ButtonLeft.GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
-			ButtonRight.GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-			ButtonRight.GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
-			ButtonJump.GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-			ButtonJump.GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
-			ButtonSpew.GetComponent<SpriteRenderer>().enabled = (  Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-			ButtonSpew.GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
+		ButtonLeft.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+		//ButtonLeft.GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
+		ButtonRight.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+		ButtonJump.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+		ButtonSpew.GetComponent<SpriteRenderer>().enabled= ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 	}
 	
 	

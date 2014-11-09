@@ -10,7 +10,20 @@ Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Buil
 Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.875 seconds
+- Completed reload, in  0.191 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 0.949244 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1290.
+Total: 3.161639 ms (FindLiveObjects: 0.240730 ms CreateObjectMapping: 0.058130 ms MarkObjects: 0.639440 ms  DeleteObjects: 0.036930 ms)
+

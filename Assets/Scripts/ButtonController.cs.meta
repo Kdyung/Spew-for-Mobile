@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: 3b63671ceab65f24d9ff6d10a16b7d3d
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ButtonLeft: {fileID: 100000, guid: 860f2ac467a4f9a4da83bf7a1feed44a, type: 2}
+  - ButtonRight: {fileID: 100000, guid: 7b0eef925e37f8046916171d501e119c, type: 2}
+  - ButtonJump: {fileID: 100000, guid: 9ef2a25fa585df94cb707538312976a4, type: 2}
+  - ButtonSpew: {fileID: 100000, guid: 9ded49c638a99554e9de5c1ff0f9944b, type: 2}
+  - hero: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
