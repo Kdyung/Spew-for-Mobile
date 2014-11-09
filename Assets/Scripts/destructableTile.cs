@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestructableTile : MonoBehaviour {
+public class destructableTile : MonoBehaviour {
 	private Animator anim;
 	// Use this for initialization
 	void Start () {
@@ -15,8 +15,9 @@ public class DestructableTile : MonoBehaviour {
 	//If tile collides with something that destroys tiles, destroy that object and do tile animation
 	void OnCollisionEnter2D (Collision2D col)
 	{
+		Debug.Log ("tile_0 has collided with "+col.gameObject.name );
 		if(col.gameObject.tag == "TileDestroyer"){
-			//Destroy(col.gameObject); //@TODO implement object destruction display or delay
+			Destroy(col.gameObject);
 			destroyTile();
 		}
 	}
