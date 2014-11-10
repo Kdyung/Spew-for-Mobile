@@ -31,15 +31,4 @@ public class GameController : MonoBehaviour {
 			Debug.Log("High Score is " + highscore );
 		}
 	}
-	/*
-	void OnTriggerEnter(other : Collider)
-	{
-		//add to players score if he collects a gem
-		if(other.gameObject.name == "meat" || other.gameObject.name == "meat(Clone)")
-		{
-			score += 10;
-			Debug.Log("Your score is " + score);
-			Destroy(other.gameObject); //Destroys Gem after player collects it
-		}
-	}*/
 }

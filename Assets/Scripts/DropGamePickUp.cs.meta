@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: dce0f3aa55a72e646a325b0777290262
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DropGame: {fileID: 100000, guid: 5b618ea77aa827f478f23b2e56f902cb, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

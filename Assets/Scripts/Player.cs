@@ -79,6 +79,7 @@ public class Player : MonoBehaviour {
 		} else {
 			anim.SetBool ("spewing", false);
 		}
+
 		//Flipping Animation
 		if (inputX > 0 && !facingRight){
 			Flip();
@@ -92,7 +93,13 @@ public class Player : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 
 	}
-
+	//TODO
+	void onCollisionEnter2D(Collision2D other){
+		if (other.gameObject.tag == "Food") {
+			Debug.Log("FOOD has touched player");
+			animation.Play("player_omnom");
+		}
+	}
 
 	//External access of InputX
 	public void getInputX(float x){

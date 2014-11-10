@@ -9,13 +9,14 @@ using System.Collections;
 
 public class DropGameController : MonoBehaviour {
 	private int score = 100;//current score
-	private int totalScore = 0; //combined total of players score
 	private int highscore = 100; //highest score player has gotten
 	private float spawnTime = 5.0f; //Every 5 seconds (5.0f) 
 	private float incrementTime = 1.0f;
 	private float minTime = 1.0f;
 
-	public GUIText scoreText;
+	//GUIText for displaying the score.
+	//Note: for some reason, transform must be (0,1,0) for GUIText to show up
+	public GUIText scoreText; 
 	public GUIText hiscoreText;
 
 	private bool gameOver;
@@ -28,40 +29,62 @@ public class DropGameController : MonoBehaviour {
 
 	public GameObject rockObject;
 	public GameObject meatObject;
-
+	private int rockCount = 0;
 	void Start(){
 		highscore = PlayerPrefs.GetInt ("High Score");
 		hiscoreText.text = highscore + "";
 		gameOver = false;
 		//invoke SpawnObjects function repeatedly
 		InvokeRepeating("spawnObjects",0.01f,spawnTime); 
+
+		if (Application.platform == RuntimePlatform.Android) {
+			scoreText.fontSize = 40;
+			hiscoreText.fontSize = 30;
+		}
+		scoreText.text = "Score: " + score;
+		hiscoreText.text = "High Score: " + score;
 	}
 	
 	void Update()
 	{
 		//Updates Scores
-		scoreText.text = score + ""; //display score
-		hiscoreText.text = highscore + "";
 		if(score > highscore) //when player dies set highscore = to that score
 		{
 			highscore = score;
 			PlayerPrefs.SetInt("High Score", highscore);
 			Debug.Log("High Score is " + highscore );
 		}
+		updateScores ();
 
 		if (gameOver) {
 			CancelInvoke ("spawnObjects");
 		}
 	}
 
+	void updateScores(){
+		scoreText.text = "Score: " + score;
+		hiscoreText.text = "High Score: " + score;
+		//Debug.Log (scoreText.text);
+	}
 
+	void getGameOver(){
+		gameOver = true;
+		Application.LoadLevel ("mainmenu");
+	}
 
 	void spawnObjects(){
 		//while (!gameOver){
 		//note spawn.x is between +5 and -5
-			Vector2 spawnPosition = new Vector2 (Random.Range (-5, 5), spawnValues.y);
-			Quaternion spawnRotation = Quaternion.identity;
+		Vector2 spawnPosition = new Vector2 (Random.Range (-5, 5), spawnValues.y);
+		Quaternion spawnRotation = Quaternion.identity;
+		//Every 10-20 rocks drop a meat items for extra score and speed up drop rate
+		if (rockCount > 20) {
+			Instantiate (meatObject, spawnPosition, spawnRotation);
+			rockCount = 0;
+		} else {
 			Instantiate (rockObject, spawnPosition, spawnRotation);
+			rockCount++;
+		}
 	}
 
 	void pickUpCollision(GameObject other){

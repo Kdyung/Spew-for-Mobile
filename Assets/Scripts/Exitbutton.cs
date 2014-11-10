@@ -5,7 +5,7 @@ using System.Collections;
  * Since this is not related to Player control, it uses its own script.
  * Prototype for a seperate control scheme for menu-related stuff later
  * */
-public class Exitbutton : MonoBehaviour
+public class ExitButton : MonoBehaviour
 {
 
 		public LayerMask mask;

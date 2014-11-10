@@ -35,14 +35,16 @@ public class ButtonController : MonoBehaviour {
 	{
 		if (Application.platform == RuntimePlatform.Android)
 		{
-			if (Input.touchCount > 0)
-			{
-				if (Input.GetTouch(0).phase == TouchPhase.Began)
-				{ 
-					CheckTouch(Input.GetTouch(0).position, "began");
-				} else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+			for (var i = 0; i < Input.touchCount; i++) { //for loop added to read multiple touches
+				if (Input.touchCount > 0)
 				{
-					CheckTouch(Input.GetTouch(0).position, "ended");
+					if (Input.GetTouch(i).phase == TouchPhase.Began)
+					{ 
+						CheckTouch(Input.GetTouch(i).position, "began");
+					} else if (Input.GetTouch(i).phase == TouchPhase.Ended)
+					{
+						CheckTouch(Input.GetTouch(i).position, "ended");
+					}
 				}
 			}
 		}
@@ -64,7 +66,7 @@ public class ButtonController : MonoBehaviour {
 	
 	void CheckTouch(Vector3 pos, string phase)
 	{
-		isActive = (phase == "began"); //If touch detected, buttons are active
+		isActive = (phase == "began"); //If touch detected, buttons are active (purely for WindowsEditor)
 
 		Vector3 wp = Camera.main.ScreenToWorldPoint(pos);
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
@@ -77,17 +79,17 @@ public class ButtonController : MonoBehaviour {
 		//Jump
 		if (ButtonJump.name == hitName && hit && phase == "began")
 		{
-			Debug.Log ("BC Jump");
+			//Debug.Log ("BC Jump");
 			hero.Jump();
 		}
 
 		//Movement Left and Right
 		if (ButtonRight.name == hitName && hit && phase == "began"){
-			Debug.Log ("BC Right");
+			//Debug.Log ("BC Right");
 			hero.getInputX(1);
 		}
 		if (ButtonLeft.name == hitName && hit && phase == "began"){
-			Debug.Log ("BC Left");
+			//Debug.Log ("BC Left");
 			hero.getInputX(-1);
 		}
 		if ( (ButtonRight.name == hitName || ButtonLeft.name == hitName) && hit && phase == "ended"){
@@ -99,7 +101,6 @@ public class ButtonController : MonoBehaviour {
 		{
 			hero.Spew();
 			hero.spewing = true;
-			audio.Play();
 		}
 		if (ButtonSpew.name == hitName && hit && phase == "ended")
 		{

@@ -2,22 +2,22 @@
 using System.Collections;
 
 public class DropGamePickUp : MonoBehaviour {
-	// Use this for initialization
-	public DropGameController DropGameController;
-	public GameObject DropGame;
+	private GameObject GameController;
 	void Start () {
-		DropGame = GameObject.Find ("DropGame");
+		GameController = GameObject.Find ("DropGame");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+	//Once Collision is detected, a message is sent to the main game.
 	void OnCollisionEnter2D (Collision2D col)
 	{
-		Debug.Log (gameObject.name + " has collided with "+col.gameObject.name );
+		//Debug.Log (gameObject.name + " has collided with "+col.gameObject.name );
 		if(col.gameObject.name == "Player"){
-			DropGame.SendMessage("pickUpCollision", gameObject);
+			GameController.SendMessage("pickUpCollision", gameObject);
 		}
 	}
 }
