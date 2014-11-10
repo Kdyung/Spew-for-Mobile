@@ -5,30 +5,37 @@ public class Menu : MonoBehaviour {
 	private string playgame = "Play Game (Demo)";
 	private string dropgame = "Falling Object Game";
 	private string exitgame = "Exit";
-
+	private string resetscore = "Reset High Score";
+	public GUIText hiscoreText;
 	
 	// Use this for initialization
 	void Start () {
+
 		OnGUI ();
 	}
 
 	void OnGUI () {
-		if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor) {
+		hiscoreText.text = "High Score: "+PlayerPrefs.GetInt ("High Score");
+		if (Application.platform == RuntimePlatform.Android) {
 			GUIStyle style = new GUIStyle(GUI.skin.button);
 			style.fontSize = 20;
 
 			// Make a background box (prev(10,10,100,90)
 			//GUI.Box (new Rect (0, 0, 300, 400), "Main Menu", style);
 			// Make the first button. prev(20,40,80,20)
-			if (GUI.Button (new Rect (50, 190, 260, 90), playgame, style) ) {
+			if (GUI.Button (new Rect (500, 090, 260, 90), playgame, style) ) {
 					Application.LoadLevel ("level1");
 			}
-			if (GUI.Button (new Rect (50, 290, 260, 90), dropgame, style) ) {
+			if (GUI.Button (new Rect (500, 190, 260, 90), dropgame, style) ) {
 					Application.LoadLevel ("dropgame");
 			}
 		
 			// Make the second button.
-			if (GUI.Button (new Rect (50, 390, 260, 90), exitgame, style)) {
+			if (GUI.Button (new Rect (500, 290, 260, 50), resetscore, style)) {
+					PlayerPrefs.SetInt("High Score", 0);
+					hiscoreText.text = "High Score: "+PlayerPrefs.GetInt ("High Score");
+			}
+			if (GUI.Button (new Rect (500, 350, 260, 90), exitgame, style)) {
 					Application.Quit ();
 			}
 		} else {
@@ -38,13 +45,15 @@ public class Menu : MonoBehaviour {
 			if (GUI.Button (new Rect (20, 60, 80, 20), playgame) ) {
 				Application.LoadLevel ("level1");
 			}
-			// Make the first button. prev(20,40,80,20)
 			if (GUI.Button (new Rect (20, 90, 80, 20), dropgame)) {
 					Application.LoadLevel ("dropgame");
 			}
-			
-			// Make the second button.
-			if (GUI.Button (new Rect (20, 120, 80, 20), exitgame)) {
+			if (GUI.Button (new Rect (20, 120, 80, 20), resetscore)) {
+				PlayerPrefs.SetInt("High Score", 0);
+				hiscoreText.text = "High Score: "+PlayerPrefs.GetInt ("High Score");
+
+			}
+			if (GUI.Button (new Rect (20, 150, 80, 20), exitgame)) {
 					Application.Quit ();
 			}
 		}

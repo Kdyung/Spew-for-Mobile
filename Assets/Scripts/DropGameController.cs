@@ -32,7 +32,6 @@ public class DropGameController : MonoBehaviour {
 	private int rockCount = 0;
 	void Start(){
 		highscore = PlayerPrefs.GetInt ("High Score");
-		hiscoreText.text = highscore + "";
 		gameOver = false;
 		//invoke SpawnObjects function repeatedly
 		InvokeRepeating("spawnObjects",0.01f,spawnTime); 
