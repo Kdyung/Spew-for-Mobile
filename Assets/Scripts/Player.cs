@@ -2,7 +2,7 @@
  * This is a Player script that is for demoing that uses keyboard inputs
  * and applies animations.
  * Has Button inputs built in through the Project Input Settings.
- * 
+ * Contains button response for both keyboard and mobile buttons simultaneously.
  **/
 
 using UnityEngine;
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 	private Vector2 speed = new Vector2(10,10);
 	public float inputX;
 	
-	public float jumpForce = 1000f;
+	private float jumpForce = 1200f;
 
 	//check for ground collision
 		//from http://unity3d.com/learn/tutorials/modules/beginner/2d/2d-controllers
@@ -95,6 +95,7 @@ public class Player : MonoBehaviour {
 	}
 	//TODO
 	void onCollisionEnter2D(Collision2D other){
+		Debug.Log (other + " has touched Player");
 		if (other.gameObject.tag == "Food") {
 			Debug.Log("FOOD has touched player");
 			animation.Play("player_omnom");

@@ -4,6 +4,11 @@ using System.Collections;
 /*This Script compiles all of the button functions. This is used 
  * because all the buttons do is access the Player Controller Player.cs
  * anyways so why not just minimize the code.
+ * The Button is normally applied to a Buttoncontroller prefab containing each
+ * individual button. Buttons are then assigned through the inspector.
+ * 11-27-14 The Controller Layer is the layer used for all buttons for this project,
+ * but the layer for masking can be assigned through inspector in case this changes.
+ * 
  * */
 public class ButtonController : MonoBehaviour {
 
@@ -22,8 +27,7 @@ public class ButtonController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Hides the Buttons if playing on the wrong platform
-		ButtonLeft.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-		//ButtonLeft.GetComponent<CircleCollider2D>().enabled = ( Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
+		ButtonLeft.GetComponent<SpriteRenderer> ().enabled = (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 		ButtonRight.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 		ButtonJump.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 		ButtonSpew.GetComponent<SpriteRenderer>().enabled= ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);

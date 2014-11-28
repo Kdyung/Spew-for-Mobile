@@ -4,23 +4,31 @@ using System.Collections;
 /* This is a code for an exit button on mobile only
  * Since this is not related to Player control, it uses its own script.
  * Prototype for a seperate control scheme for menu-related stuff later
+ * 
  * */
 public class ExitButton : MonoBehaviour
 {
 
 		public LayerMask mask;
+		public string exit_scene;
+		//the scene exited to is assigned in inspector so that button can be reused to go to different menus
 
 		void Start ()
 		{
-				GetComponent<SpriteRenderer> ().enabled = (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+			GetComponent<SpriteRenderer> ().enabled = (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
 
 		}
-		
+
+		//When called, forcibly changed the scene to a different one (menu)
+		void exitGame(){
+			Application.LoadLevel (exit_scene);
+		}
+
 		// Update is called once per frame
 		void Update (){
 				if (Input.GetButtonDown ("Quit")) {
-						Debug.Log ("Exit DropGame");
-						Application.LoadLevel ("mainmenu");
+						Debug.Log ("Exit Game");
+						exitGame ();
 				}
 
 				if (Application.platform == RuntimePlatform.Android) {
@@ -51,8 +59,8 @@ public class ExitButton : MonoBehaviour
 				Collider2D hit = Physics2D.OverlapPoint (touchPos, mask);
 
 				if (collider2D == hit && hit && phase == "began") {
-						Debug.Log ("Exit DropGame");
-						Application.LoadLevel ("mainmenu");
+						Debug.Log ("Exit Game");
+						exitGame();
 				}
 		}
 }
