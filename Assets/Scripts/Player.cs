@@ -94,11 +94,12 @@ public class Player : MonoBehaviour {
 
 	}
 	//TODO
+
 	void onCollisionEnter2D(Collision2D other){
 		Debug.Log (other + " has touched Player");
 		if (other.gameObject.tag == "Food") {
 			Debug.Log("FOOD has touched player");
-			animation.Play("player_omnom");
+			Eat();
 		}
 	}
 
@@ -107,6 +108,9 @@ public class Player : MonoBehaviour {
 		inputX = x;
 	}
 
+	public void Eat(){
+		animation.Play("player_omnom");
+	}
 
 	//Jump defined in function to allow calling from external scripts using natural conditions
 	public void Jump(){

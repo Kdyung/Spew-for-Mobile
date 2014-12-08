@@ -22,7 +22,7 @@ public class DropGameMenu : MonoBehaviour {
 			"let the ice break!";
 		if (Application.platform == RuntimePlatform.Android) {
 			GUIStyle style = new GUIStyle(GUI.skin.button);
-			style.fontSize = 20;
+			style.fontSize = 25;
 			
 			// Make a background box (prev(10,10,100,90)
 			//GUI.Box (new Rect (0, 0, 300, 400), "Main Menu", style);

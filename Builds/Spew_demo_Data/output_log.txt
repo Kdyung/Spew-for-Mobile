@@ -1,0 +1,171 @@
+Initialize engine version: 4.5.3f3 (fca41a4fabea)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) HD 6620G (ID=0x9641)
+    Vendor:   ATI
+    VRAM:     495 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.180 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+NullReferenceException: Object reference not set to an instance of an object
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 0.804937 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 109.
+Total: 3.536389 ms (FindLiveObjects: 0.034194 ms CreateObjectMapping: 0.030774 ms MarkObjects: 0.285865 ms  DeleteObjects: 0.022568 ms)
+
+UnloadTime: 0.889739 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 106.
+Total: 3.695051 ms (FindLiveObjects: 0.018464 ms CreateObjectMapping: 0.033510 ms MarkObjects: 0.276291 ms  DeleteObjects: 0.023936 ms)
+
+ArgumentException: You can only call GUI functions from inside OnGUI.
+  at UnityEngine.GUIUtility.CheckOnGUI () [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, UnityEngine.GUIContent content, UnityEngine.GUIStyle style) [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 0.681153 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 109.
+Total: 3.842087 ms (FindLiveObjects: 0.018464 ms CreateObjectMapping: 0.036246 ms MarkObjects: 0.274239 ms  DeleteObjects: 0.020516 ms)
+
+UnloadTime: 0.778265 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 106.
+Total: 3.784640 ms (FindLiveObjects: 0.019832 ms CreateObjectMapping: 0.034194 ms MarkObjects: 0.286549 ms  DeleteObjects: 0.021200 ms)
+
+ArgumentException: You can only call GUI functions from inside OnGUI.
+  at UnityEngine.GUIUtility.CheckOnGUI () [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, UnityEngine.GUIContent content, UnityEngine.GUIStyle style) [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 0.697566 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 109.
+Total: 3.710780 ms (FindLiveObjects: 0.018464 ms CreateObjectMapping: 0.036929 ms MarkObjects: 0.290652 ms  DeleteObjects: 0.020516 ms)
+
+UnloadTime: 0.704405 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 106.
+Total: 4.214122 ms (FindLiveObjects: 0.017781 ms CreateObjectMapping: 0.042401 ms MarkObjects: 0.294072 ms  DeleteObjects: 0.021200 ms)
+
+ArgumentException: You can only call GUI functions from inside OnGUI.
+  at UnityEngine.GUIUtility.CheckOnGUI () [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, UnityEngine.GUIContent content, UnityEngine.GUIStyle style) [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 0.701669 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 109.
+Total: 3.709412 ms (FindLiveObjects: 0.021200 ms CreateObjectMapping: 0.034194 ms MarkObjects: 0.300911 ms  DeleteObjects: 0.020516 ms)
+
+UnloadTime: 0.718767 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 106.
+Total: 3.863287 ms (FindLiveObjects: 0.017781 ms CreateObjectMapping: 0.034878 ms MarkObjects: 0.308433 ms  DeleteObjects: 0.020516 ms)
+
+ArgumentException: You can only call GUI functions from inside OnGUI.
+  at UnityEngine.GUIUtility.CheckOnGUI () [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, UnityEngine.GUIContent content, UnityEngine.GUIStyle style) [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+UnloadTime: 0.666791 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 109.
+Total: 3.756601 ms (FindLiveObjects: 0.018464 ms CreateObjectMapping: 0.034878 ms MarkObjects: 0.315956 ms  DeleteObjects: 0.020516 ms)
+
+UnloadTime: 0.737232 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1239.
+Total: 4.411766 ms (FindLiveObjects: 0.225683 ms CreateObjectMapping: 0.055394 ms MarkObjects: 0.610712 ms  DeleteObjects: 0.034878 ms)
+
+High Score is 100
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+COLLISION DETECTED)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Your score is 200
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+High Score is 200
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+COLLISION DETECTED)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Your score is 300
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+High Score is 300
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+COLLISION DETECTED)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Your score is 310
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+High Score is 310
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+COLLISION DETECTED)
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+Your score is 410
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+
+High Score is 410
+ 
+(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+

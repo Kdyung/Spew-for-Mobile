@@ -1,0 +1,114 @@
+fileFormatVersion: 2
+guid: 60d2392ca59e6b34c922b9d4c30e216a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 10-27-14 sabretooth cat copy
+    21300002: sabretooth_1
+    21300004: sabretooth_2
+    21300006: sabretooth_3
+    21300008: sabretooth_4
+    21300010: sabretooth_5
+    21300012: sabretooth_death
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sabretooth_1
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 5030
+        width: 1283
+        height: 410
+      alignment: 9
+      pivot: {x: .40963304, y: .277812988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sabretooth_2
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 4216
+        width: 1154
+        height: 556
+      alignment: 9
+      pivot: {x: .428236723, y: .157419771}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sabretooth_3
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 3220
+        width: 1236
+        height: 574
+      alignment: 9
+      pivot: {x: .359295011, y: .456716508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sabretooth_4
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1860
+        width: 1172
+        height: 827
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sabretooth_5
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 724
+        width: 991
+        height: 1105
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sabretooth_death
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 507
+        width: 797
+        height: 849
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

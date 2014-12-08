@@ -10,10 +10,10 @@ using System.Collections;
 public class DropGameController : MonoBehaviour {
 	private int score = 100;//current score
 	private int highscore = 100; //highest score player has gotten
-	private float spawnTime = 5.0f; //Every 5 seconds (5.0f) 
+	private float spawnTime = 3.0f; //Every 5 seconds (5.0f) 
 	private float incrementTime = 1.0f;
-	private float minTime = 1.0f;
-
+	private float minTime = 0.5f;
+	private int rockcount_max = 10;
 	//GUIText for displaying the score.
 	//Note: for some reason, transform must be (0,1,0) for GUIText to show up
 	public GUIText scoreText; 
@@ -33,6 +33,7 @@ public class DropGameController : MonoBehaviour {
 	void Start(){
 		highscore = PlayerPrefs.GetInt ("High Score");
 		gameOver = false;
+
 		//invoke SpawnObjects function repeatedly
 		InvokeRepeating("spawnObjects",0.01f,spawnTime); 
 
@@ -47,12 +48,6 @@ public class DropGameController : MonoBehaviour {
 	void Update()
 	{
 		//Updates Scores
-		if(score > highscore) //when player dies set highscore = to that score
-		{
-			highscore = score;
-			PlayerPrefs.SetInt("High Score", highscore);
-			Debug.Log("High Score is " + highscore );
-		}
 		updateScores ();
 
 		if (gameOver) {
@@ -61,8 +56,13 @@ public class DropGameController : MonoBehaviour {
 	}
 
 	void updateScores(){
+		if(score > highscore){
+			highscore = score;
+			PlayerPrefs.SetInt("High Score", highscore);
+			//Debug.Log("High Score is " + highscore );
+		}
 		scoreText.text = "Score: " + score;
-		hiscoreText.text = "High Score: " + score;
+		hiscoreText.text = "High Score: " + highscore;
 		//Debug.Log (scoreText.text);
 	}
 
@@ -77,7 +77,7 @@ public class DropGameController : MonoBehaviour {
 		Vector2 spawnPosition = new Vector2 (Random.Range (-5, 5), spawnValues.y);
 		Quaternion spawnRotation = Quaternion.identity;
 		//Every 10-20 rocks drop a meat items for extra score and speed up drop rate
-		if (rockCount > 20) {
+		if (rockCount > rockcount_max) {
 			Instantiate (meatObject, spawnPosition, spawnRotation);
 			rockCount = 0;
 		} else {
@@ -86,25 +86,27 @@ public class DropGameController : MonoBehaviour {
 		}
 	}
 
+	//This is a function called by DropGamePickUp to process score incrementing and other stuff 
 	void pickUpCollision(GameObject other){
-		Debug.Log ("COLLISION DETECTED)");
-		//add to players score if he collects a gem
-		int displayscore = 10;
-			//If the object picked up is meat, 
-		//if (other.tag != "TileDestroyer"){ //rough way of checking if it's not a rock
-		if (other.name == "meat" || other.name == "meat(Clone)") {
-				displayscore = 100;
-				//changing the spawntime and making it faster
+		//Debug.Log ("COLLISION DETECTED)");
+
+		int addscore = 10;
+		//If the object picked up is meat make rocks drop faster
+		if (other.name == meatObject.name || other.name == meatObject.name+"(Clone)") {
+				addscore = 100;
+				//changing the spawntime and making it faster once a meat object is picked up
 				if (spawnTime > minTime) {
 						spawnTime -= incrementTime;
+						if (spawnTime < minTime){
+							spawnTime = minTime;
+						}
 						//Only way I can find  at the moment to change the spawn time is to cancel and reinvoke
 						CancelInvoke ("spawnObjects");
 						InvokeRepeating ("spawnObjects", 0.01f, spawnTime); 
 				}
 		}
 
-		score += displayscore;
-		Debug.Log("Your score is " + score);
+		score += addscore;
 		Destroy(other.gameObject);
 	}
 }
