@@ -18,6 +18,10 @@ public class DropGamePickUp : MonoBehaviour {
 		//Debug.Log (gameObject.name + " has collided with "+col.gameObject.name );
 		if(col.gameObject.name == "Player"){
 			GameController.SendMessage("pickUpCollision", gameObject);
+			Debug.Log (this.gameObject.tag);
+			if (this.gameObject.tag == "Food"){
+				col.transform.SendMessage("Eat");
+			}
 		}
 	}
 }

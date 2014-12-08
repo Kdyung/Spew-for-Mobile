@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
 	//takes in public audio source (since this is simple game, only two needed).
 	public AudioSource spewAudio;
 	public AudioSource jumpAudio; 
+	public AudioSource eatAudio;
 
 	public ButtonController buttons;
 
@@ -109,7 +110,8 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Eat(){
-		animation.Play("player_omnom");
+		eatAudio.Play ();
+		anim.Play("player_omnom");
 	}
 
 	//Jump defined in function to allow calling from external scripts using natural conditions
