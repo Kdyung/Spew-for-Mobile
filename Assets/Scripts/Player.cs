@@ -94,15 +94,6 @@ public class Player : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 
 	}
-	//TODO
-
-	void onCollisionEnter2D(Collision2D other){
-		Debug.Log (other + " has touched Player");
-		if (other.gameObject.tag == "Food") {
-			Debug.Log("FOOD has touched player");
-			Eat();
-		}
-	}
 
 	//External access of InputX
 	public void getInputX(float x){
@@ -110,7 +101,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Eat(){
-		eatAudio.Play ();
+		//eatAudio.Play ();
 		anim.Play("player_omnom");
 	}
 
