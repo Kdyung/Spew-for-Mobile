@@ -101,6 +101,7 @@ public class ButtonController : MonoBehaviour {
 		}
 
 		//Spew
+		//Contents of this condition should mimic that of the if statement in Player.Update
 		if (ButtonSpew.name == hitName && hit && phase == "began")
 		{
 			hero.Spew();
@@ -108,6 +109,7 @@ public class ButtonController : MonoBehaviour {
 		}
 		if (ButtonSpew.name == hitName && hit && phase == "ended")
 		{
+			hero.CancelSpew();
 			hero.spewing = false;
 		}
 

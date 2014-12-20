@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
 	public LayerMask whatIsGround; //Assigned through inspector
 	float groundRadius = 0.2f;
 
+	public GameObject spewObject;//the object created by spewing
 
 	//Animation Control variables
 	private Animator anim;
@@ -57,9 +58,10 @@ public class Player : MonoBehaviour {
 					Jump ();
 				}
 				if (Input.GetButtonDown ("Spew")) {
-					Spew ();
 					spewing = true;
+					Spew ();
 				} else if (Input.GetButtonUp("Spew")){
+					CancelSpew ();
 					spewing = false;
 				}
 			}
@@ -75,8 +77,10 @@ public class Player : MonoBehaviour {
 		} else {
 			anim.SetBool ("moving", false);
 		}
+		//Spewing is a continuous function that 
 		if (spewing) {
 			anim.SetBool ("spewing", true);
+
 		} else {
 			anim.SetBool ("spewing", false);
 		}
@@ -108,17 +112,35 @@ public class Player : MonoBehaviour {
 	//Jump defined in function to allow calling from external scripts using natural conditions
 	public void Jump(){
 			if (grounded) {
+			    anim.SetBool ("grounded", false);
 				rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
-				jumpAudio.Play ();
-				anim.SetBool ("grounded", false);
+				if (!spewing)
+					jumpAudio.Play ();
+
 			}
 	}
 
 	//Spew defined in function
 	public void Spew(){
-			spewAudio.Play();
+		spewAudio.Play();
+		InvokeRepeating("SpawnLava",0.01f,0.1f);
 	}
 
+	public void CancelSpew(){
+		CancelInvoke ("SpawnLava");
+	}
+
+	public void SpawnLava(){
+				//generate a lava ball instance
+				GameObject Clone;
+				int spew_direction = facingRight ? 1 : -1; // the x direction of the force
+				Vector3 spewPoint = new Vector3 (transform.position.x + spew_direction * 0.6f, transform.position.y + 1.2f, transform.position.z); 
+				Clone = (Instantiate (spewObject, spewPoint, transform.rotation)) as GameObject;
+				//add force to the spawned objected
+		
+				Vector2 spewForce = new Vector2 (400 * spew_direction, 100);
+				Clone.rigidbody2D.AddForce (spewForce);
+		}
 	//Reverses the x scale for animation purposes
 	void Flip(){
 		facingRight = !facingRight;

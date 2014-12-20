@@ -13,15 +13,14 @@ public class DropGamePickUp : MonoBehaviour {
 	}
 
 	//Once Collision is detected, a message is sent to the main game.
-	void OnCollisionEnter2D (Collision2D col)
-	{
-		//Debug.Log (gameObject.name + " has collided with "+col.gameObject.name );
-		if(col.gameObject.name == "Player"){
-			GameController.SendMessage("pickUpCollision", gameObject);
-			Debug.Log (this.gameObject.tag);
-			if (this.gameObject.tag == "Food"){
-				col.transform.SendMessage("Eat");
+	void OnCollisionEnter2D (Collision2D col){
+				//Debug.Log (gameObject.name + " has collided with "+col.gameObject.name );
+			if (col.gameObject.name == "Player") {
+					GameController.SendMessage ("pickUpCollision", gameObject);
+					Debug.Log (this.gameObject.tag);
+					if (this.gameObject.tag == "Food") {
+							col.transform.SendMessage ("Eat");
+					}
 			}
 		}
-	}
 }

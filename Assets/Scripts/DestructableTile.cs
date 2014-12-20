@@ -16,8 +16,11 @@ public class DestructableTile : MonoBehaviour {
 	void OnCollisionEnter2D ( Collision2D other ){
 		//Debug.Log ("tile_0 has collided with "+col.gameObject.name );
 		if( other.gameObject.tag == "TileDestroyer" ){
-			Destroy( other.gameObject );
 			destroyTile();
+		}
+		//Destroy other object if rock from Drop Game
+		if (other.gameObject.name == "rock_drop" || other.gameObject.name == "rock_drop(Clone)") {
+			Destroy (other.gameObject);		
 		}
 	}
 	
@@ -27,7 +30,7 @@ public class DestructableTile : MonoBehaviour {
 		gameObject.collider2D.enabled = false;
 	}
 	
-	//This is a basic method called by an animation event from Animator
+	//This is a basic method called by an animation event from Animator to delete the tile gameobject
 	void destroyObject(){
 		Destroy(gameObject);
 	}
