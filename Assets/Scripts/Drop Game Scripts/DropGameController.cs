@@ -68,7 +68,9 @@ public class DropGameController : MonoBehaviour {
 
 	void getGameOver(){
 		gameOver = true;
-		Application.LoadLevel ("dropgamemenu");
+		PlayerPrefs.SetInt ("Score",score);
+		Application.LoadLevel ("dropgameover");
+
 	}
 
 	void spawnObjects(){
