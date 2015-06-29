@@ -27,7 +27,7 @@ public class DestructableTile : MonoBehaviour {
 	//Initiates destruction animation of tile which leads to the object being destroyed 
 	void destroyTile(){
 		anim.SetBool ("destroy", true);
-		gameObject.collider2D.enabled = false;
+		gameObject.GetComponent<Collider2D>().enabled = false;
 	}
 	
 	//This is a basic method called by an animation event from Animator to delete the tile gameobject

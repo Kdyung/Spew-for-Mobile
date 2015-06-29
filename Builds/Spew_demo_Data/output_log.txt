@@ -1,4 +1,4 @@
-Initialize engine version: 4.6.1f1 (d1db7a1b5196)
+Initialize engine version: 5.1.0f3 (ec70b008569d)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -12,11 +12,17 @@ Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Buil
 Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  1.462 seconds
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.289 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+<RI> Initialized touch support.
 Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Kyra Yung\Documents\Unity Projects\Spew(Mobile)\Builds\Spew_demo_Data\Managed\System.dll (this message is harmless)
 NullReferenceException: Object reference not set to an instance of an object
   at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
   at Menu.OnGUI () [0x00000] in <filename unknown>:0 
@@ -24,9 +30,60 @@ NullReferenceException: Object reference not set to an instance of an object
  
 (Filename:  Line: -1)
 
-UnloadTime: 0.903423 ms
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.460112 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 511.
-Total: 2.568020 ms (FindLiveObjects: 0.113526 ms CreateObjectMapping: 0.049924 ms MarkObjects: 0.492403 ms  DeleteObjects: 0.032142 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 651.
+Total: 1.088758 ms (FindLiveObjects: 0.209271 ms CreateObjectMapping: 0.121733 ms MarkObjects: 0.728346 ms  DeleteObjects: 0.025304 ms)
+
+ExitDoor collision
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ExitDoor collides with Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.039370 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 734.
+Total: 0.919152 ms (FindLiveObjects: 0.169605 ms CreateObjectMapping: 0.075228 ms MarkObjects: 0.656537 ms  DeleteObjects: 0.015729 ms)
+
+ExitDoor collision
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ExitDoor collides with Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ExitDoor collision
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ExitDoor collides with Player
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.150161 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 651.
+Total: 0.850763 ms (FindLiveObjects: 0.132675 ms CreateObjectMapping: 0.073860 ms MarkObjects: 0.629182 ms  DeleteObjects: 0.013677 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.921056 ms
+
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 191.
+Total: 0.921204 ms (FindLiveObjects: 0.075912 ms CreateObjectMapping: 0.052659 ms MarkObjects: 0.463679 ms  DeleteObjects: 0.326217 ms)
+
+ArgumentException: You can only call GUI functions from inside OnGUI.
+  at UnityEngine.GUIUtility.CheckOnGUI () [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, UnityEngine.GUIContent content, UnityEngine.GUIStyle style) [0x00000] in <filename unknown>:0 
+  at UnityEngine.GUI.Box (Rect position, System.String text) [0x00000] in <filename unknown>:0 
+  at Menu.OnGUI () [0x00000] in <filename unknown>:0 
+  at Menu.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 

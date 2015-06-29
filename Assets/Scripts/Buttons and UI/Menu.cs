@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour {
 			//GUI.Box (new Rect (0, 0, 300, 400), "Main Menu", style);
 			// Make the first button. prev(20,40,80,20)
 			if (GUI.Button (new Rect (500, 090, 260, 90), playgame, style) ) {
-					Application.LoadLevel ("level1");
+					Application.LoadLevel ("demo");
 			}
 			if (GUI.Button (new Rect (500, 190, 260, 90), dropgame, style) ) {
 					Application.LoadLevel ("dropgamemenu");

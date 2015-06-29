@@ -21,7 +21,4 @@ public class Meat : MonoBehaviour {
 			}
 		}
 	}
-	void eatMeat(){
-		gameObject.collider2D.enabled = false;
-	}
 }

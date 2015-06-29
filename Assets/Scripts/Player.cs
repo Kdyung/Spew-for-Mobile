@@ -67,8 +67,8 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		Vector2 movement = new Vector2 (speed.x * inputX, rigidbody2D.velocity.y);
-		rigidbody2D.velocity = movement;//Apply movement to rigidbody2D
+		Vector2 movement = new Vector2 (speed.x * inputX, GetComponent<Rigidbody2D>().velocity.y);
+		GetComponent<Rigidbody2D>().velocity = movement;//Apply movement to rigidbody2D
 
 
 		//Refresh Animator parameters
@@ -113,7 +113,7 @@ public class Player : MonoBehaviour {
 	public void Jump(){
 			if (grounded) {
 			    anim.SetBool ("grounded", false);
-				rigidbody2D.AddForce (new Vector2 (0f, jumpForce));
+				GetComponent<Rigidbody2D>().AddForce (new Vector2 (0f, jumpForce));
 				if (!spewing)
 					jumpAudio.Play ();
 
@@ -139,7 +139,7 @@ public class Player : MonoBehaviour {
 				//add force to the spawned objected
 		
 				Vector2 spewForce = new Vector2 (400 * spew_direction, 100);
-				Clone.rigidbody2D.AddForce (spewForce);
+				Clone.GetComponent<Rigidbody2D>().AddForce (spewForce);
 		}
 	//Reverses the x scale for animation purposes
 	void Flip(){

@@ -58,7 +58,7 @@ public class ExitButton : MonoBehaviour
 		Vector2 touchPos = new Vector2 (wp.x, wp.y);
 		Collider2D hit = Physics2D.OverlapPoint (touchPos, mask);
 		
-		if (collider2D == hit && hit && phase == "began") {
+		if (GetComponent<Collider2D>() == hit && hit && phase == "began") {
 			Debug.Log ("Exit Game");
 			exitGame();
 		}

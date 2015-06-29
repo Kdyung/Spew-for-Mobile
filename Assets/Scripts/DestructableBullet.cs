@@ -5,10 +5,10 @@ using UnityEngine;
 using System.Collections;
 
 public class DestructableBullet : MonoBehaviour {
-		private Animator anim;
+		private Animator animator;
 		// Use this for initialization
 		void Start () {
-			anim = this.GetComponent<Animator> ();
+			animator = this.GetComponent<Animator> ();
 		}
 		
 		//If tile collides with something, explode it
@@ -20,10 +20,8 @@ public class DestructableBullet : MonoBehaviour {
 		
 		//Initiates destruction animation of bullet which leads to the object being destroyed via animation event
 		void destroyBullet(){
-			gameObject.collider2D.enabled = false;
-			gameObject.rigidbody2D.transform.position = transform.position; 
-			anim.SetBool ("destroy", true); //TODO: if the collider removal is not needed, just move this to the collision function
-
+			gameObject.GetComponent<Collider2D>().enabled = false;
+			animator.SetBool ("destroy", true); //TODO: if the collider removal is not needed, just move this to the collision function
 		}
 		
 		//This is a basic method called by an animation event from Animator to delete itself
