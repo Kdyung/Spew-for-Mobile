@@ -18,9 +18,6 @@ public class Player : MonoBehaviour {
 	//check for ground collision
 		//from http://unity3d.com/learn/tutorials/modules/beginner/2d/2d-controllers
 	public bool grounded;
-	public Transform groundCheck;	//Assigned through inspector
-	public LayerMask whatIsGround; //Assigned through inspector
-	float groundRadius = 0.2f;
 
 	public GameObject spewObject;//the object created by spewing
 
@@ -95,8 +92,22 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate() {
 		//groundCheck for grounded Character
-		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+		//grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
+	}
 
+	//trigger-based ground checking
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.GetComponent<Collider2D>().gameObject.layer == LayerMask.NameToLayer("Platforms")){
+			grounded = true;
+		}
+	}
+	void OnTriggerStay2D (Collider2D other) {
+		if (other.GetComponent<Collider2D>().gameObject.layer == LayerMask.NameToLayer("Platforms"))
+			grounded = true;
+	}
+	void OnTriggerExit2D (Collider2D other) {
+		if (other.GetComponent<Collider2D>().gameObject.layer == LayerMask.NameToLayer("Platforms"))
+			grounded = false;
 	}
 
 	//External access of InputX
