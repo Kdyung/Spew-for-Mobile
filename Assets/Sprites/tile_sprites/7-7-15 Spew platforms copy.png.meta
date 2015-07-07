@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 01d50e5371137874eb7e8769d49f5e9a
+guid: 6cb692236a505cf4ba5dd2f7fe2ef7a9
+timeCreated: 1436292285
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 10-31-14 Spew props copy
-    21300002: 10-31-14 Spew props copy_1
-    21300004: 10-31-14 Spew props copy_2
-    21300006: 10-31-14 Spew props copy_2
+    21300000: ice_platform_1
+    21300002: ice_platform_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -29,10 +29,10 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -51,33 +51,23 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: 10-31-14 Spew props copy_1
+    - name: ice_platform_1
       rect:
         serializedVersion: 2
-        x: 507
-        y: 117
-        width: 535
-        height: 391
+        x: 20
+        y: 178
+        width: 188
+        height: 48
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 10-31-14 Spew props copy_2
+    - name: ice_platform_2
       rect:
         serializedVersion: 2
-        x: 1126
-        y: 131
-        width: 434
-        height: 396
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: 10-31-14 Spew props copy_2
-      rect:
-        serializedVersion: 2
-        x: 1744
-        y: 169
-        width: 304
-        height: 304
+        x: 34
+        y: 0
+        width: 364
+        height: 46
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

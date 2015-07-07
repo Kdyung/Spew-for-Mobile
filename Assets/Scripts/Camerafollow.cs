@@ -8,7 +8,7 @@ using System.Collections;
 public class Camerafollow : MonoBehaviour{
 		 
 		private Transform player;
-		 
+
 		void Start (){
 				player = GameObject.Find ("Player").transform;
 		}

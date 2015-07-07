@@ -13,10 +13,8 @@ public class Player : MonoBehaviour {
 	private Vector2 speed = new Vector2(10,10);
 	public float inputX;
 	
-	private float jumpForce = 1200f;
-
-	//check for ground collision
-		//from http://unity3d.com/learn/tutorials/modules/beginner/2d/2d-controllers
+	private float jumpForce = 1500f;
+	
 	public bool grounded;
 
 	public GameObject spewObject;//the object created by spewing
@@ -25,7 +23,6 @@ public class Player : MonoBehaviour {
 	private Animator anim;
 	private bool facingRight;
 	public bool spewing;
-
 
 	//takes in public audio source (since this is simple game, only two needed).
 	public AudioSource spewAudio;

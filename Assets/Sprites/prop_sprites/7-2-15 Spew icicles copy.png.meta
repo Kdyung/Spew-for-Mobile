@@ -1,0 +1,301 @@
+fileFormatVersion: 2
+guid: c6dd024f5e71d874f80ff9f3c0973e9f
+timeCreated: 1436295267
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: icicle_0
+    21300002: icicle_1
+    21300004: icicle_2
+    21300006: icicle_3
+    21300008: icicle_4
+    21300010: icicle_big_3
+    21300012: icicle_big_2
+    21300014: icicles_shard_0
+    21300016: icicles_shard_6
+    21300018: icicles_shard_8
+    21300020: icicles_shard_1
+    21300022: icicles_shard_2
+    21300024: icicles_shard_4
+    21300026: icicles_shard_7
+    21300028: icicles_shard_10
+    21300030: icicles_shard_3
+    21300032: icicles_shard_9
+    21300034: icicles_shard_5
+    21300036: ice_sheet_l
+    21300038: ice_sheet_r
+    21300040: icicle_big_1
+    21300042: icicle_big_base
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: icicle_0
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1928
+        width: 97
+        height: 299
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_1
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 2082
+        width: 74
+        height: 145
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_2
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 2020
+        width: 54
+        height: 207
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_3
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 2003
+        width: 87
+        height: 224
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_4
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 1894
+        width: 99
+        height: 333
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_big_3
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1562
+        width: 562
+        height: 647
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_big_2
+      rect:
+        serializedVersion: 2
+        x: 2347
+        y: 1383
+        width: 575
+        height: 831
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_0
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 995
+        width: 88
+        height: 59
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_6
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 995
+        width: 44
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_8
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 967
+        width: 65
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_1
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 809
+        width: 68
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_2
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 874
+        width: 73
+        height: 68
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_4
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 869
+        width: 43
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_7
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 838
+        width: 62
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_10
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 866
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_3
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 742
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_9
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 774
+        width: 53
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicles_shard_5
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 724
+        width: 57
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ice_sheet_l
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 456
+        width: 731
+        height: 169
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ice_sheet_r
+      rect:
+        serializedVersion: 2
+        x: 2178
+        y: 462
+        width: 730
+        height: 189
+      alignment: 5
+      pivot: {x: 1, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_big_1
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1165
+        width: 560
+        height: 1064
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: icicle_big_base
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 2210
+        width: 585
+        height: 139
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
