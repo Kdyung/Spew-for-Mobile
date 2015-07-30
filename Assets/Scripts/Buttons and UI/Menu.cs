@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Menu : MonoBehaviour {
@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour {
 	private string exitgametext = "Exit";
 
 	//Scene Names (for multi platform consistency)
-	private string playgame = "demo";
+	private string playgame = "level1-1";
 	private string dropgame = "dropgamemenu";
 
 	//private string resetscore = "Reset High Score";
@@ -34,6 +34,9 @@ public class Menu : MonoBehaviour {
 			if (GUI.Button (new Rect (500, 190, 260, 90), dropgametext, style) ) {
 					Application.LoadLevel (dropgame);
 			}
+			if (GUI.Button (new Rect (500, 290, 260, 90), "Demo", style) ) {
+				Application.LoadLevel ("demo");
+			}
 			/*
 			// Reset High Score button.
 			if (GUI.Button (new Rect (500, 290, 260, 50), resetscore, style)) {
@@ -42,7 +45,7 @@ public class Menu : MonoBehaviour {
 			}
 			*/
 			//Exit Game Button
-			if (GUI.Button (new Rect (500, 350, 260, 90), exitgametext, style)) {
+			if (GUI.Button (new Rect (500, 390, 260, 90), exitgametext, style)) {
 					Application.Quit ();
 			}
 		} else {
@@ -54,6 +57,9 @@ public class Menu : MonoBehaviour {
 			}
 			if (GUI.Button (new Rect (400, 120, 120, 40), dropgametext)) {
 					Application.LoadLevel (dropgame);
+			}
+			if (GUI.Button (new Rect (500, 290, 120, 40), "Demo") ) {
+				Application.LoadLevel ("demo");
 			}
 			/*
 			if (GUI.Button (new Rect (20, 120, 100, 20), resetscore)) {
