@@ -76,7 +76,8 @@ public class ButtonController : MonoBehaviour {
 		Vector2 touchPos = new Vector2(wp.x, wp.y);
 		Collider2D hit = Physics2D.OverlapPoint(touchPos, ButtonLayer);
 
-		string hitName = hit.transform.gameObject.name; //String used to identify object touched
+		string hitName;//String used to identify object touched
+		hitName= hit.transform.gameObject.name; //NullReferenceException
 
 		Debug.Log ("BC Hit "+hit.transform.gameObject.name+" "+hit+" "+phase); //Debug
 
@@ -102,13 +103,12 @@ public class ButtonController : MonoBehaviour {
 
 		//Spew
 		//Contents of this condition should mimic that of the if statement in Player.Update
-		if (ButtonSpew.name == hitName && hit && phase == "began")
-		{
+		if (ButtonSpew.name == hitName && hit && phase == "began"){
 			hero.Spew();
 			hero.spewing = true;
 		}
-		if (ButtonSpew.name == hitName && hit && phase == "ended")
-		{
+		//if (ButtonSpew.name == hitName && hit && phase == "ended"){ //Previous: Spew would not be canceled on button release
+		if ( phase == "ended"){
 			hero.CancelSpew();
 			hero.spewing = false;
 		}
