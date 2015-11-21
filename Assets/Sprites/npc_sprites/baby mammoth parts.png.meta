@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: 7e8f5c8e2a0e0e44aac4c0b88ec456d7
+timeCreated: 1441390500
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: baby_mammoth_tusk_sprite
+    21300002: baby_mammoth_ear_sprite
+    21300004: baby_mammoth_fur_a
+    21300006: baby_mammoth_fur_c
+    21300008: baby_mammoth_body_sprite
+    21300010: baby_mammoth_trunk_1
+    21300012: baby_mammoth_eyebrow_1
+    21300014: baby_mammoth_eyebrow_2
+    21300016: baby_mammoth_eyebrow_3
+    21300018: baby_mammoth_fur_b
+    21300020: baby_mammoth_fur_d
+    21300022: baby_mammoth_trunk_2
+    21300024: baby_mammoth_eye_open
+    21300026: baby_mammoth_eye_closed
+    21300028: baby_mammoth_eye_shock
+    21300030: baby_mammoth_trunk_3
+    21300032: baby_mammoth_head_sprite
+    21300034: baby_mammoth_leg_2
+    21300036: baby_mammoth_leg_1
+    21300038: 7-18-15 baby mammoth parts_22
+    21300040: baby_mammoth_trunk_end
+    21300042: baby_mammoth_foot_sprite
+    21300044: 7-18-15 baby mammoth parts_0
+    21300046: 7-18-15 baby mammoth parts_1
+    21300048: 7-18-15 baby mammoth parts_2
+    21300050: 7-18-15 baby mammoth parts_3
+    21300052: 7-18-15 baby mammoth parts_4
+    21300054: 7-18-15 baby mammoth parts_5
+    21300056: 7-18-15 baby mammoth parts_6
+    21300058: 7-18-15 baby mammoth parts_7
+    21300060: 7-18-15 baby mammoth parts_8
+    21300062: 7-18-15 baby mammoth parts_9
+    21300064: 7-18-15 baby mammoth parts_10
+    21300066: 7-18-15 baby mammoth parts_11
+    21300068: 7-18-15 baby mammoth parts_12
+    21300070: 7-18-15 baby mammoth parts_13
+    21300072: 7-18-15 baby mammoth parts_14
+    21300074: 7-18-15 baby mammoth parts_15
+    21300076: 7-18-15 baby mammoth parts_16
+    21300078: 7-18-15 baby mammoth parts_17
+    21300080: 7-18-15 baby mammoth parts_18
+    21300082: 7-18-15 baby mammoth parts_19
+    21300084: 7-18-15 baby mammoth parts_20
+    21300086: 7-18-15 baby mammoth parts_21
+    21300088: 7-18-15 baby mammoth parts_23
+    21300090: 7-18-15 baby mammoth parts_24
+    21300092: baby_mammoth_tusk_sprite
+    21300094: baby_mammoth_ear_sprite
+    21300096: baby_mammoth_fura_sprite
+    21300098: baby_mammoth_furc_sprite
+    21300100: baby_mammoth_body_sprite
+    21300102: baby_mammoth_trunk1_sprite
+    21300104: baby_mammoth_eyebrowa_sprite
+    21300106: baby_mammoth_eyebrowb_sprite
+    21300108: baby_mammoth_eyebrowc_sprite
+    21300110: baby_mammoth_furb_sprite
+    21300112: baby_mammoth_furd_sprite
+    21300114: baby mammoth parts_11
+    21300116: baby_mammoth_eyea_sprite
+    21300118: baby_mammoth_eyeb_sprite
+    21300120: baby_mammoth_eyec_sprite
+    21300122: baby mammoth parts_15
+    21300124: baby_mammoth_head_sprite
+    21300126: baby_mammoth_leg_lower
+    21300128: baby mammoth parts_18
+    21300130: baby_mammoth_leg_upper
+    21300132: baby mammoth parts_20
+    21300134: baby_mammoth_trunk2
+    21300136: baby_mammoth_trunkend
+    21300138: baby_mammoth_foot
+    21300140: baby mammoth parts_24
+    21300142: baby_mammoth_leg_lower_sprite
+    21300144: baby_mammoth_leg_upper_sprite
+    21300146: baby_mammoth_trunk2_sprite
+    21300148: baby_mammoth_trunkend_sprite
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: baby_mammoth_tusk_sprite
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 611
+        width: 115
+        height: 101
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_ear_sprite
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 609
+        width: 119
+        height: 171
+      alignment: 4
+      pivot: {x: 0, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_fura_sprite
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 586
+        width: 132
+        height: 195
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_furc_sprite
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 584
+        width: 141
+        height: 195
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_body_sprite
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 455
+        width: 486
+        height: 374
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_trunk1_sprite
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 478
+        width: 128
+        height: 120
+      alignment: 9
+      pivot: {x: .800000012, y: .800000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_eyebrowa_sprite
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 517
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_eyebrowb_sprite
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 521
+        width: 52
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_eyebrowc_sprite
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 534
+        width: 36
+        height: 13
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_furb_sprite
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 359
+        width: 121
+        height: 208
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_furd_sprite
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 381
+        width: 138
+        height: 183
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_eyea_sprite
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 452
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_eyeb_sprite
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 462
+        width: 48
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_eyec_sprite
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 445
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_head_sprite
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 15
+        width: 341
+        height: 363
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_leg_lower_sprite
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 148
+        width: 126
+        height: 158
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_leg_upper_sprite
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 179
+        width: 133
+        height: 212
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_trunk2_sprite
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 145
+        width: 90
+        height: 85
+      alignment: 9
+      pivot: {x: .800000012, y: .800000012}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_trunkend_sprite
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 19
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: baby_mammoth_foot_sprite
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 8
+        width: 141
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -54,7 +54,8 @@ public class Player : MonoBehaviour {
 				if (Input.GetButtonDown ("Spew")) {
 					spewing = true;
 					Spew ();
-				} else if (Input.GetButtonUp("Spew")){
+				}
+				if (Input.GetButtonUp("Spew")){
 					CancelSpew ();
 					spewing = false;
 				}
@@ -139,16 +140,17 @@ public class Player : MonoBehaviour {
 	}
 
 	public void SpawnLava(){
-				//generate a lava ball instance
-				GameObject Clone;
-				int spew_direction = facingRight ? 1 : -1; // the x direction of the force
-				Vector3 spewPoint = new Vector3 (transform.position.x + spew_direction * 0.6f, transform.position.y + 1.2f, transform.position.z); 
-				Clone = (Instantiate (spewObject, spewPoint, transform.rotation)) as GameObject;
-				//add force to the spawned objected
-		
-				Vector2 spewForce = new Vector2 (400 * spew_direction, 100);
-				Clone.GetComponent<Rigidbody2D>().AddForce (spewForce);
-		}
+			//generate a lava ball instance
+			GameObject Clone;
+			int spew_direction = facingRight ? 1 : -1; // the x direction of the force
+			Vector3 spewPoint = new Vector3 (transform.position.x + spew_direction * 0.6f, transform.position.y + 1.2f, transform.position.z); 
+			Clone = (Instantiate (spewObject, spewPoint, transform.rotation)) as GameObject;
+			//add force to the spawned objected
+	
+			Vector2 spewForce = new Vector2 (400 * spew_direction, 100);
+			Clone.GetComponent<Rigidbody2D>().AddForce (spewForce);
+	}
+
 	//Reverses the x scale for animation purposes
 	void Flip(){
 		facingRight = !facingRight;

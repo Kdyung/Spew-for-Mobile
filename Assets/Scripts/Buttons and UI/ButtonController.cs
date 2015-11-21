@@ -22,15 +22,19 @@ public class ButtonController : MonoBehaviour {
 
 	public Player hero;//
 
-	public bool isActive;
+	public bool isActive; //flag for if buttons are being used or not
+	public bool showButtons;
 
 	// Use this for initialization
 	void Start () {
+		showButtons = (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+		Debug.Log ("Buttons Active = " + showButtons);
 		//Hides the Buttons if playing on the wrong platform
-		ButtonLeft.GetComponent<SpriteRenderer> ().enabled = (Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-		ButtonRight.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-		ButtonJump.GetComponent<SpriteRenderer>().enabled = ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
-		ButtonSpew.GetComponent<SpriteRenderer>().enabled= ( Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.Android);
+		/** //For some reason following script does not work anymore
+		//ButtonLeft.GetComponent<SpriteRenderer> ().enabled = showButtons;
+		//ButtonLeft.SetActive (showButtons);
+		**/
+		gameObject.SetActive (showButtons);
 	}
 	
 	
@@ -79,7 +83,7 @@ public class ButtonController : MonoBehaviour {
 		string hitName;//String used to identify object touched
 		hitName= hit.transform.gameObject.name; //NullReferenceException
 
-		Debug.Log ("BC Hit "+hit.transform.gameObject.name+" "+hit+" "+phase); //Debug
+		//Debug.Log ("BC Hit "+hit.transform.gameObject.name+" "+hit+" "+phase); //Debug
 
 		//Jump
 		if (ButtonJump.name == hitName && hit && phase == "began")
@@ -97,7 +101,7 @@ public class ButtonController : MonoBehaviour {
 			//Debug.Log ("BC Left");
 			hero.getInputX(-1);
 		}
-		if ( (ButtonRight.name == hitName || ButtonLeft.name == hitName) && hit && phase == "ended"){
+		if ( ( ButtonRight.name == hitName || ButtonLeft.name == hitName ) && hit && phase == "ended"){
 			hero.getInputX(0);
 		}
 
@@ -108,7 +112,7 @@ public class ButtonController : MonoBehaviour {
 			hero.spewing = true;
 		}
 		//if (ButtonSpew.name == hitName && hit && phase == "ended"){ //Previous: Spew would not be canceled on button release
-		if ( phase == "ended"){
+		if ( ButtonSpew.name == hitName && hit && phase == "ended"){
 			hero.CancelSpew();
 			hero.spewing = false;
 		}
